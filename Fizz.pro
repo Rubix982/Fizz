@@ -23,7 +23,7 @@ HEADERS += \
     include/mainwindow.h
 
 FORMS += \
-    mainwindow.ui
+    interface/mainwindow.ui
 
 TRANSLATIONS += \
     Fizz_en_PK.ts
