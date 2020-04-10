@@ -2,6 +2,13 @@
 cmake-build-debug
 .idea
 
+# Ignore some logo files
+img/Logo/facebook_cover_photo_2.png
+img/Logo/facebook_profile_image.png
+img/Logo/instagram_profile_image.png
+img/Logo/linkedin_banner_image_1.png
+img/Logo/Logo.svg
+
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
 

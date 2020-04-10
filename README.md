@@ -1,3 +1,5 @@
+![Fizz logo](./img/Logo/logo_transparent.png)
+
 # Fizz
 
 A UI and dashboard for system processes, memory, CPU usage, and common Operating System statistics.
@@ -9,14 +11,17 @@ Designed using
 
 ---
 
-## The File Structure
+## The Folder Structure
 
 - ***img***: Should contain any required or needed images for the project
 - ***include***: Includes the header / .ui files
 - ***interface***: Should contain symlinks to the ui files
 - ***misc***: Any misc logs or files
 - ***resources***: Should contain qrc files
-- ***src***: Main .cpp / .c files 
+- ***src***: Main .cpp / .c files
+- ***tasks***: Modular approach to just targeting each part of TODO, and integrating into main project after everything of that feature is complete
+- ***test***: I'll write tests here if needed
+- ***  
 
 --- 
 
