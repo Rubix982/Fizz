@@ -13,6 +13,7 @@ Designed using
 
 ## The Folder Structure
 
+- ***docs***: Should contain documentation - empty for now
 - ***img***: Should contain any required or needed images for the project
 - ***include***: Includes the header / .ui files
 - ***interface***: Should contain symlinks to the ui files
@@ -21,7 +22,8 @@ Designed using
 - ***src***: Main .cpp / .c files
 - ***tasks***: Modular approach to just targeting each part of TODO, and integrating into main project after everything of that feature is complete
 - ***test***: I'll write tests here if needed
-- ***  
+- ***TODO***: Info about tasks remaining, done, and current.
+- ***TSFiles***: Contains files for translation with QtLinguistic
 
 --- 
 
