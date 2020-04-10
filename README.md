@@ -20,7 +20,7 @@ Designed using
 
 --- 
 
-## Root file structure
+## Root File Structure
 
 - ***.clang-format***: Contains default styling method for keeping code clean
 - ***.clang-tidy***: Contains basic configurations for code cleanliness
@@ -36,3 +36,17 @@ Designed using
 - CMake version used `3.16.4`
 - QMake version `3.1`
 - Using Qt version `5.14.1` in `/usr/lib`
+
+## How To build
+
+- In the root directory run
+```
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make 
+$ # Wait for build to finish. If everything 
+$ # is okay, it should print *leaving directory...*
+$ # in the end
+$ ./Fizz
+```
