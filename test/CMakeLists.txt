@@ -15,7 +15,7 @@ set(HEADERS
 add_executable(${TEST_NAME} ${SOURCES} ${HEADERS})
 target_link_libraries(${TEST_NAME} PUBLIC
     gtest_main
-    Fizz
+    # Fizz
 )
 
 add_test(

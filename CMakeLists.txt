@@ -95,7 +95,7 @@ add_compile_options(-Wno-dev -Wall -Wextra -O2 -fPIC)
 if(ANDROID)
     add_library(${PROJECT_NAME} ${UI} ${RESOURCES} ${SOURCES} ${HEADERS} ${TS_FILES_ALL} )
 else()
-    add_library(${PROJECT_NAME} STATIC ${UI} ${RESOURCES} ${SOURCES} ${HEADERS} ${TS_FILES_ALL} )
+    add_executable(${PROJECT_NAME} ${UI} ${RESOURCES} ${SOURCES} ${HEADERS} ${TS_FILES_ALL} )
 endif()
 
 add_subdirectory(test)
