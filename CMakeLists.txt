@@ -11,7 +11,7 @@
 #    endif()
 #endif()
 
-# @param CMake version -- REQUIREd
+# @param CMake version -- REQUIRED
 cmake_minimum_required(VERSION 3.15)
 
 # @param Should be the project name
@@ -27,6 +27,13 @@ endif()
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+# For testing related configurations
+enable_testing()
+
+add_subdirectory(googletest)
+# End testing related configurations
 
 # The CXX standard
 set(CMAKE_CXX_STANDARD 20)
@@ -38,7 +45,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # For TS { translation }  file s
-set(TS_FILE_DIR TSFiles)
+set(TS_FILE_DIR ts_files)
 set(TS_FILES testing_with_cmake_en_001.ts)
 
 # Project configurations
@@ -57,13 +64,20 @@ set(UI include/mainwindow.ui)
 set(SOURCES
         ${SRC_DIR}/${ENTRY_POINT}
         ${SRC_DIR}/mainwindow.cpp
-        # ${SRC_DIR}/moc_mainwindow.cpp
+        # ${SRC_DIR}/moc_mainwindow.cpp 
+)
 
+# Adding the headers
+set(HEADERS
         ${INCLUDE_DIR}/mainwindow.h
         ${INCLUDE_DIR}/ui_mainwindow.h
-        ${INCLUDE_DIR}/moc_predefs.h
+        ${INCLUDE_DIR}/moc_predefs.h 
+)
 
-        ${TS_FILE_DIR}/${TS_FILES} )
+# Adding the TS files
+set(TS_FILES_ALL
+        ${TS_FILE_DIR}/${TS_FILES} 
+)
 
 # Find QT5
 find_package(Qt5 COMPONENTS Core Widgets LinguistTools OpenGL REQUIRED)
@@ -76,13 +90,15 @@ add_definitions(${Qt5OpenGL_DEFINITIONS})
 include_directories(${Qt5OpenGL_INCLUDES})
 
 # Add some compiler options
-add_compile_options(-Wall -Wextra -O2 -fPIC)
+add_compile_options(-Wno-dev -Wall -Wextra -O2 -fPIC)
 
 if(ANDROID)
-    add_library(${PROJECT_NAME} ${UI} ${RESOURCES} ${SOURCES} )
+    add_library(${PROJECT_NAME} ${UI} ${RESOURCES} ${SOURCES} ${HEADERS} ${TS_FILES_ALL} )
 else()
-    add_executable(${PROJECT_NAME} ${UI} ${RESOURCES} ${SOURCES} )
+    add_library(${PROJECT_NAME} STATIC ${UI} ${RESOURCES} ${SOURCES} ${HEADERS} ${TS_FILES_ALL} )
 endif()
+
+add_subdirectory(test)
 
 ## QT related additions
 target_link_libraries(${PROJECT_NAME} PRIVATE ${Qt5Widgets_LIBRARIES} Qt5::Widgets)
