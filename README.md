@@ -48,12 +48,6 @@ Designed using
 
 - In the root directory run
 ```
-$ mkdir build
-$ cd build
-$ cmake ..
-$ make 
-$ # Wait for build to finish. If everything 
-$ # is okay, it should print *leaving directory...*
-$ # in the end
-$ ./Fizz
+$ chmod +x ./build.sh
+$ ./build.sh
 ```
