@@ -2,7 +2,10 @@ function build() {
     echo "---------" > /dev/null 2>&1 >> ./logs/build.log
     echo "[BUILD] Building for target ... " > /dev/null 2>&1 >> ./logs/build.log
     echo "---------" > /dev/null 2>&1 >> ./logs/build.log
-    cmake --no-warn-unused-cli -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE \
+    
+    uic interface/mainwindow.ui -o include/ui_mainwindow.h
+
+    cmake --target all --no-warn-unused-cli -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE \
     -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc \
     -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++ \
     -H/home/saif/Desktop/Folders/University/OS/Project \
@@ -10,6 +13,7 @@ function build() {
 }
 
 function run_build() {
+    
     # run the executable
     echo "---------" > /dev/null 2>&1 >> ./logs/build.log
     echo "[RUN] Running executable ... " > /dev/null 2>&1 >> ./logs/build.log
@@ -31,6 +35,10 @@ function clear_log() {
     touch ./logs/build.log
 }
 
+function generate_docs() {
+    doxygen docs/Doxyfile
+}
+
 # MAIN functionality starts here
 
 number_of_arguments=$#
@@ -50,7 +58,8 @@ then
     clear_log # Clear the file
     build # build the project
     test_build # Run the tests
-    run_build # Run the executable_
+    run_build # Run the executable
+    generate_docs # generate the relevant documentation
 
 elif [ "$1" = "clean" ]
 then
