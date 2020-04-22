@@ -12,7 +12,7 @@
 #endif()
 
 # @param CMake version -- REQUIRED
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.5)
 
 # @param Should be the project name
 set(PROJECT_NAME Fizz)
@@ -27,6 +27,7 @@ endif()
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 # For testing related configurations
@@ -35,30 +36,33 @@ enable_testing()
 add_subdirectory(googletest)
 # End testing related configurations
 
-# The CXX standard
-set(CMAKE_CXX_STANDARD 20)
-
 # For SRC dir and CMake Macros
 set(SRC_DIR src)
 set(INCLUDE_DIR include)
+set(INTERFACE_DIR interface)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_AUTOUIC_SEARCH_PATHS ${INTERFACE_DIR})
 
 # For TS { translation }  file s
 set(TS_FILE_DIR ts_files)
 set(TS_FILES testing_with_cmake_en_001.ts)
 
 # Project configurations
-set(ENTRY_POINT mainStarter.cpp)
+set(ENTRY_POINT main.cpp)
 
 ## Local header files
 include_directories(${INCLUDE_DIR})
 
 # Use Qt5 resources
-set(RESOURCE resources/resources.qrc)
+set(RESOURCE 
+    resources/resources.qrc
+)
 
 # Use QT5 ui
-set(UI include/mainwindow.ui)
+set(UI 
+    ${INTERFACE_DIR}/mainwindow.ui
+)
 
 # Adding sources
 set(SOURCES
@@ -90,19 +94,18 @@ add_definitions(${Qt5OpenGL_DEFINITIONS})
 include_directories(${Qt5OpenGL_INCLUDES})
 
 # Add some compiler options
-add_compile_options(-Wno-dev -Wall -Wextra -O2 -fPIC)
+add_compile_options(-Wall -Wextra -O2 -fPIC)
 
 if(ANDROID)
-    add_library(${PROJECT_NAME} ${UI} ${RESOURCES} ${SOURCES} ${HEADERS} ${TS_FILES_ALL} )
+    add_library(${PROJECT_NAME} ${UI} ${RESOURCES} ${SOURCES} ${HEADERS}  ${TS_FILES_ALL} )
 else()
-    add_executable(${PROJECT_NAME} ${UI} ${RESOURCES} ${SOURCES} ${HEADERS} ${TS_FILES_ALL} )
+    add_executable(${PROJECT_NAME} ${UI} ${RESOURCES} ${SOURCES} ${HEADERS}  ${TS_FILES_ALL} )
 endif()
 
 add_subdirectory(test)
 
 ## QT related additions
 target_link_libraries(${PROJECT_NAME} PRIVATE ${Qt5Widgets_LIBRARIES} Qt5::Widgets)
-cmake_minimum_required(VERSION 3.5)
 qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 
 ############
