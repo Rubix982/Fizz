@@ -5,7 +5,7 @@ A list of features that I would like to see in my project
 ## Dashboard
 - A dashboard that shows
     - The CPU, Memory, Disk usage
-    - Networking information, such as current download and uploaded bytes/secodn
+    - Networking information, such as current download and uploaded bytes/second
 - A list of system information and current drivers
 
 ## Services
@@ -37,4 +37,7 @@ A list of features that I would like to see in my project
     - Disk Read Write
     - Memory ( RAM ) in use
     - Network graph
-  
+
+## MISC
+
+- Integrate Jenkins into your project for CI/CD, https://www.youtube.com/watch?v=FHPtchw-eHA
