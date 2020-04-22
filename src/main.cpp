@@ -1,7 +1,10 @@
+// local header files
 #include "../include/mainwindow.h"
 
+// CXX standard header files
 #include <stdio.h>
 
+// QT header files
 #include <QApplication>
 #include <QPushButton>
 #include <QTableView>
@@ -12,13 +15,5 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
-    // qDebug() << "Hello, World!";
-    
-    // // QApplication a( argc, argv );
-    // QPushButton hello( "Hello world!", 0 );
-    // hello.resize( 100, 30 );
-    // hello.show();
-
-    // printf("Hello, World!");
     return a.exec();
 }

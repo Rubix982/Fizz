@@ -15,6 +15,7 @@ function build() {
 function run_build() {
     
     # run the executable
+    echo "" > /dev/null 2>&1 >> ./logs/build.log
     echo "---------" > /dev/null 2>&1 >> ./logs/build.log
     echo "[RUN] Running executable ... " > /dev/null 2>&1 >> ./logs/build.log
     echo "---------" > /dev/null 2>&1 >> ./logs/build.log
@@ -23,6 +24,7 @@ function run_build() {
 
 function test_build() {
     # run the tests
+    echo "" > /dev/null 2>&1 >> ./logs/build.log
     echo "---------" > /dev/null 2>&1 >> ./logs/build.log
     echo "[TEST] Running tests ... " > /dev/null 2>&1 >> ./logs/build.log
     echo "---------" > /dev/null 2>&1 >> ./logs/build.log
@@ -36,7 +38,11 @@ function clear_log() {
 }
 
 function generate_docs() {
-    doxygen docs/Doxyfile
+    echo "" > /dev/null 2>&1 >> ./logs/build.log
+    echo "---------" > /dev/null 2>&1 >> ./logs/build.log
+    echo "[DOC] Generating documentation ... " > /dev/null 2>&1 >> ./logs/build.log
+    echo "---------" > /dev/null 2>&1 >> ./logs/build.log
+    doxygen docs/Doxyfile > /dev/null 2>&1 >> ./logs/build.log
 }
 
 # MAIN functionality starts here
@@ -58,8 +64,8 @@ then
     clear_log # Clear the file
     build # build the project
     test_build # Run the tests
-    run_build # Run the executable
     generate_docs # generate the relevant documentation
+    run_build # Run the executable
 
 elif [ "$1" = "clean" ]
 then
