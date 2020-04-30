@@ -56,6 +56,7 @@ int main(void)
 {
     init();
 
+    std::cout << "Hello, World!\n";
     std::cout << getCurrentValue() << "\n";
 
     return 0;

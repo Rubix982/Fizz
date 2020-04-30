@@ -16,7 +16,7 @@
   - How would you consider memory together?
   - How would you see and look at all the partitions on any given machine?
   - How to differentiate between actual memory and swap memory?
-- Disk usage
+- Disk usages
   - Which paritions are allocated where?
   - How to get back information for each of the disk storage devices on your machine?
 - Networking information
@@ -33,6 +33,11 @@
   - platform
   - distribution name
 
-## CPU usage
+## CPU usage [Reference List]
 
-- 
+- See /sys/devices/system/cpu , 
+
+## GPU usage
+
+- See here [GPU programming wit CPP](https://linuxhint.com/gpu-programming-cpp/)
+- Also [Linux commands to display your hardware information](https://opensource.com/article/19/9/linux-commands-hardware-information)
