@@ -46,10 +46,13 @@ class systemInfo
         void resolveCPUCores(void);
         void resolveCPUSpeed(void);
 
-    private:
-
         /*!< helper functions */
         std::string getDataFromBuffer(void);
+
+        ~systemInfo();
+
+    private:
+
 
         /*!< Attributes */
     

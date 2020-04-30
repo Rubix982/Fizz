@@ -2,30 +2,6 @@
 [BUILD] Building for target ... 
 ---------
 Not searching for unused variables given on the command line.
--- The C compiler identification is GNU 9.2.1
--- The CXX compiler identification is GNU 9.2.1
--- Check for working C compiler: /usr/bin/gcc
--- Check for working C compiler: /usr/bin/gcc -- works
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Detecting C compile features
--- Detecting C compile features - done
--- Check for working CXX compiler: /usr/bin/g++
--- Check for working CXX compiler: /usr/bin/g++ -- works
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Found PythonInterp: /usr/bin/python (found version "3.8.1") 
--- Looking for pthread.h
--- Looking for pthread.h - found
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
--- Looking for pthread_create in pthreads
--- Looking for pthread_create in pthreads - not found
--- Looking for pthread_create in pthread
--- Looking for pthread_create in pthread - found
--- Found Threads: TRUE  
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/saif/Desktop/Folders/University/OS/Project/build
@@ -33,47 +9,27 @@ Not searching for unused variables given on the command line.
 ---------
 [TEST] Running tests ... 
 ---------
-[1/28] Automatic MOC and UIC for target gtest
-[2/28] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/gtest_autogen/mocs_compilation.cpp.o
-[3/28] Automatic MOC and UIC for target Fizz
-[4/28] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/networks.cpp.o
-[5/28] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/usage.cpp.o
-[6/28] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/systemInfo.cpp.o
-[7/28] Building CXX object CMakeFiles/Fizz.dir/Fizz_autogen/mocs_compilation.cpp.o
-[8/28] Building CXX object CMakeFiles/Fizz.dir/src/mainwindow.cpp.o
+[1/19] Automatic MOC and UIC for target Fizz
+[2/18] Automatic MOC and UIC for target gtest
+[3/16] Automatic MOC and UIC for target gtest_main
+[4/14] Automatic MOC and UIC for target gmock
+[5/12] Automatic MOC and UIC for target ExampleTest
+[6/10] Automatic MOC and UIC for target gmock_main
+[7/8] Building CXX object CMakeFiles/Fizz.dir/src/mainwindow.cpp.o
 ../src/mainwindow.cpp: In member function ‘void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint&)’:
 ../src/mainwindow.cpp:16:76: warning: unused parameter ‘pos’ [-Wunused-parameter]
    16 | void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint &pos)
       |                                                              ~~~~~~~~~~~~~~^~~
-[9/28] Building CXX object CMakeFiles/Fizz.dir/src/main.cpp.o
-[10/28] Linking CXX executable Fizz
-[11/28] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
-[12/28] Linking CXX static library lib/libgtestd.a
-[13/28] Automatic MOC and UIC for target gtest_main
-[14/28] Automatic MOC and UIC for target gmock
-[15/28] Building CXX object googletest/googletest/CMakeFiles/gtest_main.dir/gtest_main_autogen/mocs_compilation.cpp.o
-[16/28] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/gmock_autogen/mocs_compilation.cpp.o
-[17/28] Building CXX object googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
-[18/28] Linking CXX static library lib/libgtest_maind.a
-[19/28] Automatic MOC and UIC for target ExampleTest
-AutoGen warning: "SRC:/test/include/ExampleTest.hpp" is empty.
-
-[20/28] Building CXX object test/CMakeFiles/ExampleTest.dir/ExampleTest_autogen/mocs_compilation.cpp.o
-[21/28] Building CXX object test/CMakeFiles/ExampleTest.dir/src/ExampleTest.cpp.o
-[22/28] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
-[23/28] Linking CXX static library lib/libgmockd.a
-[24/28] Linking CXX executable test/ExampleTest
-[25/28] Automatic MOC and UIC for target gmock_main
-[26/28] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/gmock_main_autogen/mocs_compilation.cpp.o
-[27/28] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
-[28/28] Linking CXX static library lib/libgmock_maind.a
+[8/8] Linking CXX executable Fizz
 
 ---------
 [DOC] Generating documentation ... 
 ---------
 /home/saif/Desktop/Folders/University/OS/Project/src/moc_mainwindow.cpp:24: warning: Compound qt_meta_stringdata_MainWindow_t is not documented.
 /home/saif/Desktop/Folders/University/OS/Project/src/dashboard/networks.cpp:4: warning: documented symbol 'void Networks::testing_public' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/dashboard/systemInfo.cpp:140: warning: documented symbol 'void systemInfo::testing_public' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/dashboard/systemInfo.cpp:266: warning: documented symbol 'void systemInfo::testing_public' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/dashboard/systemInfo.cpp:273: warning: documented symbol 'std::string systemInfo::getDataFromBuffer' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/dashboard/systemInfo.cpp:278: warning: documented symbol 'systemInfo::~systemInfo' was not declared or defined.
 /home/saif/Desktop/Folders/University/OS/Project/src/dashboard/usage.cpp:4: warning: documented symbol 'void usage::testing_public' was not declared or defined.
 /home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:4: warning: documented symbol 'MainWindow::MainWindow' was not declared or defined.
 /home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:11: warning: documented symbol 'MainWindow::~MainWindow' was not declared or defined.
@@ -95,9 +51,9 @@ Searching for files to exclude
 Searching INPUT for files to process...
 Searching for files in directory /home/saif/Desktop/Folders/University/OS/Project/src
 Searching for files in directory /home/saif/Desktop/Folders/University/OS/Project/src/dashboard
-Searching for files in directory /home/saif/Desktop/Folders/University/OS/Project/src/graphs
 Searching for files in directory /home/saif/Desktop/Folders/University/OS/Project/src/packages
 Searching for files in directory /home/saif/Desktop/Folders/University/OS/Project/src/processes
+Searching for files in directory /home/saif/Desktop/Folders/University/OS/Project/src/resources
 Searching for files in directory /home/saif/Desktop/Folders/University/OS/Project/src/services
 Reading and parsing tag files
 Parsing files
@@ -212,4 +168,4 @@ Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/scalab
 Invalid Context= "UI" line for icon theme:  "/usr/share/icons/Adwaita/scalable/ui/"
 [SYSTEM_INFO.CPP] Hello, World!
 [SYSTEM_INFO.CPP] Hello, world, from systemInfo.cpp -> constructor
-An error occured: No such file or directory
+archlinux

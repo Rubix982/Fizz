@@ -143,7 +143,6 @@ systemInfo::resolveDistribution(void)
     
     ss.clear();
     ss << description;
-    std::string token;
 
     std::getline(ss, token, ':');
     releaseType = std::regex_replace(token, std::regex("^ +"), "");
@@ -269,4 +268,14 @@ systemInfo::testing_public(void)
     printf("Hello, World!");
 
     return ;
+}
+
+std::string systemInfo::getDataFromBuffer(void)
+{
+    return "";
+}
+
+systemInfo::~systemInfo()
+{
+    
 }
