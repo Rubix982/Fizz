@@ -49,10 +49,10 @@ Not searching for unused variables given on the command line.
 [10/28] Linking CXX executable Fizz
 [11/28] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
 [12/28] Linking CXX static library lib/libgtestd.a
-[13/28] Automatic MOC and UIC for target gmock
-[14/28] Automatic MOC and UIC for target gtest_main
-[15/28] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/gmock_autogen/mocs_compilation.cpp.o
-[16/28] Building CXX object googletest/googletest/CMakeFiles/gtest_main.dir/gtest_main_autogen/mocs_compilation.cpp.o
+[13/28] Automatic MOC and UIC for target gtest_main
+[14/28] Automatic MOC and UIC for target gmock
+[15/28] Building CXX object googletest/googletest/CMakeFiles/gtest_main.dir/gtest_main_autogen/mocs_compilation.cpp.o
+[16/28] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/gmock_autogen/mocs_compilation.cpp.o
 [17/28] Building CXX object googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
 [18/28] Linking CXX static library lib/libgtest_maind.a
 [19/28] Automatic MOC and UIC for target ExampleTest
@@ -60,9 +60,9 @@ AutoGen warning: "SRC:/test/include/ExampleTest.hpp" is empty.
 
 [20/28] Building CXX object test/CMakeFiles/ExampleTest.dir/ExampleTest_autogen/mocs_compilation.cpp.o
 [21/28] Building CXX object test/CMakeFiles/ExampleTest.dir/src/ExampleTest.cpp.o
-[22/28] Linking CXX executable test/ExampleTest
-[23/28] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
-[24/28] Linking CXX static library lib/libgmockd.a
+[22/28] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
+[23/28] Linking CXX static library lib/libgmockd.a
+[24/28] Linking CXX executable test/ExampleTest
 [25/28] Automatic MOC and UIC for target gmock_main
 [26/28] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/gmock_main_autogen/mocs_compilation.cpp.o
 [27/28] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
@@ -73,7 +73,7 @@ AutoGen warning: "SRC:/test/include/ExampleTest.hpp" is empty.
 ---------
 /home/saif/Desktop/Folders/University/OS/Project/src/moc_mainwindow.cpp:24: warning: Compound qt_meta_stringdata_MainWindow_t is not documented.
 /home/saif/Desktop/Folders/University/OS/Project/src/dashboard/networks.cpp:4: warning: documented symbol 'void Networks::testing_public' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/dashboard/systemInfo.cpp:139: warning: documented symbol 'void systemInfo::testing_public' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/dashboard/systemInfo.cpp:140: warning: documented symbol 'void systemInfo::testing_public' was not declared or defined.
 /home/saif/Desktop/Folders/University/OS/Project/src/dashboard/usage.cpp:4: warning: documented symbol 'void usage::testing_public' was not declared or defined.
 /home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:4: warning: documented symbol 'MainWindow::MainWindow' was not declared or defined.
 /home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:11: warning: documented symbol 'MainWindow::~MainWindow' was not declared or defined.
@@ -212,4 +212,4 @@ Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/scalab
 Invalid Context= "UI" line for icon theme:  "/usr/share/icons/Adwaita/scalable/ui/"
 [SYSTEM_INFO.CPP] Hello, World!
 [SYSTEM_INFO.CPP] Hello, world, from systemInfo.cpp -> constructor
-archlinux
+An error occured: No such file or directory

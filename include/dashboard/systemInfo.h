@@ -48,6 +48,9 @@ class systemInfo
 
     private:
 
+        /*!< helper functions */
+        std::string getDataFromBuffer(void);
+
         /*!< Attributes */
     
         //! the system hostname
@@ -70,6 +73,9 @@ class systemInfo
 
         //! the CPU speed
         std::string cpuSpeed;
+
+        //! the release type
+        std::string releaseType;
 
 };
 
