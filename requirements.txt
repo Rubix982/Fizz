@@ -1,1 +1,8 @@
 # Currently empty
+# These are the required packages for my project on Arch Linux
+# They maybe named differently depending on your OS
+
+qt5-base
+build-essential 
+libgl1-mesa-dev
+openmp

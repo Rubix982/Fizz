@@ -2,7 +2,7 @@
 
 # Fizz
 
-A UI and dashboard for system processes, memory, CPU usage, and common Operating System statistics.
+A UI and dashboard for system processes, memory, CPU usage, and common Operating System statistics. Inspired by [stacer](https://github.com/oguzhaninan/Stacer), and [netdata](https://github.com/netdata/netdata).
 
 Designed using 
 - Cmake 
@@ -14,9 +14,11 @@ Designed using
 ## The Folder Structure
 
 - ***docs***: Should contain documentation - empty for now
+- **googletest**: Testing module required for making and running required tests
 - ***img***: Should contain any required or needed images for the project
 - ***include***: Includes the header / .ui files
-- ***interface***: Should contain symlinks to the ui files
+- ***interface***: Contains a ui file for the gui interface
+- **logs**: Contains all the information related to building, testing, docs, and running
 - ***misc***: Any misc logs or files
 - ***resources***: Should contain qrc files
 - ***src***: Main .cpp / .c files
@@ -50,6 +52,16 @@ Designed using
 ```
 $ chmod +x ./build.sh
 $ ./build.sh
+```
+
+- To clean the build structure ( remove the folder ),
+```
+$ ./build.sh clean
+```
+
+- To clear the contents of logs/build.log file,
+```
+$ ./build.sh clear
 ```
 
 ## References
