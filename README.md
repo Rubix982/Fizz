@@ -51,3 +51,7 @@ Designed using
 $ chmod +x ./build.sh
 $ ./build.sh
 ```
+
+## References
+
+- [GNU Coreutils - Core GNU utilities](https://www.gnu.org/software/coreutils/manual/coreutils.html#toc-Summarizing-files-1)

@@ -33,36 +33,58 @@ Not searching for unused variables given on the command line.
 ---------
 [TEST] Running tests ... 
 ---------
-[1/20] Automatic MOC and UIC for target Fizz
-[2/20] Building CXX object googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
-[3/20] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
-[4/20] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/networks.cpp.o
-[5/20] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/usage.cpp.o
-[6/20] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/systemInfo.cpp.o
-[7/20] Building CXX object CMakeFiles/Fizz.dir/Fizz_autogen/mocs_compilation.cpp.o
-[8/20] Building CXX object CMakeFiles/Fizz.dir/src/main.cpp.o
-[9/20] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
-[10/20] Building CXX object CMakeFiles/Fizz.dir/src/mainwindow.cpp.o
+[1/28] Automatic MOC and UIC for target gtest
+[2/28] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/gtest_autogen/mocs_compilation.cpp.o
+[3/28] Automatic MOC and UIC for target Fizz
+[4/28] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/networks.cpp.o
+[5/28] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/usage.cpp.o
+[6/28] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/systemInfo.cpp.o
+[7/28] Building CXX object CMakeFiles/Fizz.dir/Fizz_autogen/mocs_compilation.cpp.o
+[8/28] Building CXX object CMakeFiles/Fizz.dir/src/mainwindow.cpp.o
 ../src/mainwindow.cpp: In member function ‘void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint&)’:
 ../src/mainwindow.cpp:16:76: warning: unused parameter ‘pos’ [-Wunused-parameter]
    16 | void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint &pos)
       |                                                              ~~~~~~~~~~~~~~^~~
-[11/20] Linking CXX executable Fizz
-[12/20] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
-[13/20] Linking CXX static library lib/libgtestd.a
-[14/20] Linking CXX static library lib/libgtest_maind.a
-[15/20] Linking CXX static library lib/libgmockd.a
-[16/20] Automatic MOC and UIC for target ExampleTest
+[9/28] Building CXX object CMakeFiles/Fizz.dir/src/main.cpp.o
+[10/28] Linking CXX executable Fizz
+[11/28] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+[12/28] Linking CXX static library lib/libgtestd.a
+[13/28] Automatic MOC and UIC for target gmock
+[14/28] Automatic MOC and UIC for target gtest_main
+[15/28] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/gmock_autogen/mocs_compilation.cpp.o
+[16/28] Building CXX object googletest/googletest/CMakeFiles/gtest_main.dir/gtest_main_autogen/mocs_compilation.cpp.o
+[17/28] Building CXX object googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+[18/28] Linking CXX static library lib/libgtest_maind.a
+[19/28] Automatic MOC and UIC for target ExampleTest
 AutoGen warning: "SRC:/test/include/ExampleTest.hpp" is empty.
 
-[17/20] Building CXX object test/CMakeFiles/ExampleTest.dir/ExampleTest_autogen/mocs_compilation.cpp.o
-[18/20] Linking CXX static library lib/libgmock_maind.a
-[19/20] Building CXX object test/CMakeFiles/ExampleTest.dir/src/ExampleTest.cpp.o
-[20/20] Linking CXX executable test/ExampleTest
+[20/28] Building CXX object test/CMakeFiles/ExampleTest.dir/ExampleTest_autogen/mocs_compilation.cpp.o
+[21/28] Building CXX object test/CMakeFiles/ExampleTest.dir/src/ExampleTest.cpp.o
+[22/28] Linking CXX executable test/ExampleTest
+[23/28] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
+[24/28] Linking CXX static library lib/libgmockd.a
+[25/28] Automatic MOC and UIC for target gmock_main
+[26/28] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/gmock_main_autogen/mocs_compilation.cpp.o
+[27/28] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
+[28/28] Linking CXX static library lib/libgmock_maind.a
 
 ---------
 [DOC] Generating documentation ... 
 ---------
+/home/saif/Desktop/Folders/University/OS/Project/src/moc_mainwindow.cpp:24: warning: Compound qt_meta_stringdata_MainWindow_t is not documented.
+/home/saif/Desktop/Folders/University/OS/Project/src/dashboard/networks.cpp:4: warning: documented symbol 'void Networks::testing_public' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/dashboard/systemInfo.cpp:139: warning: documented symbol 'void systemInfo::testing_public' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/dashboard/usage.cpp:4: warning: documented symbol 'void usage::testing_public' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:4: warning: documented symbol 'MainWindow::MainWindow' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:11: warning: documented symbol 'MainWindow::~MainWindow' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:16: warning: documented symbol 'void MainWindow::on_centralwidget_customContextMenuRequested' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/moc_mainwindow.cpp:58: warning: documented symbol 'void MainWindow::qt_static_metacall' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/moc_mainwindow.cpp:66: warning: documented symbol 'const QT_INIT_METAOBJECT QMetaObject MainWindow::staticMetaObject' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/moc_mainwindow.cpp:76: warning: documented symbol 'const QMetaObject * MainWindow::metaObject' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/moc_mainwindow.cpp:81: warning: documented symbol 'void * MainWindow::qt_metacast' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/moc_mainwindow.cpp:89: warning: documented symbol 'int MainWindow::qt_metacall' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/moc_mainwindow.cpp:31: warning: Member data[1] (variable) of class qt_meta_stringdata_MainWindow_t is not documented.
+/home/saif/Desktop/Folders/University/OS/Project/src/moc_mainwindow.cpp:32: warning: Member stringdata0[11] (variable) of class qt_meta_stringdata_MainWindow_t is not documented.
 Searching for include files...
 Searching for example files...
 Searching for images...
@@ -174,3 +196,20 @@ finished...
 ---------
 [RUN] Running executable ... 
 ---------
+Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/8x8/legacy/"
+Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/16x16/legacy/"
+Invalid Context= "UI" line for icon theme:  "/usr/share/icons/Adwaita/16x16/ui/"
+Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/22x22/legacy/"
+Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/24x24/legacy/"
+Invalid Context= "UI" line for icon theme:  "/usr/share/icons/Adwaita/24x24/ui/"
+Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/32x32/legacy/"
+Invalid Context= "UI" line for icon theme:  "/usr/share/icons/Adwaita/32x32/ui/"
+Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/48x48/legacy/"
+Invalid Context= "UI" line for icon theme:  "/usr/share/icons/Adwaita/48x48/ui/"
+Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/256x256/legacy/"
+Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/512x512/legacy/"
+Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/scalable/legacy/"
+Invalid Context= "UI" line for icon theme:  "/usr/share/icons/Adwaita/scalable/ui/"
+[SYSTEM_INFO.CPP] Hello, World!
+[SYSTEM_INFO.CPP] Hello, world, from systemInfo.cpp -> constructor
+archlinux

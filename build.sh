@@ -1,7 +1,7 @@
 function build() {
-    echo "---------" > /dev/null 2>&1 >> ./logs/build.log
-    echo "[BUILD] Building for target ... " > /dev/null 2>&1 >> ./logs/build.log
-    echo "---------" > /dev/null 2>&1 >> ./logs/build.log
+    echo "---------" &>> ./logs/build.log
+    echo "[BUILD] Building for target ... " &>> ./logs/build.log
+    echo "---------" &>> ./logs/build.log
     
     uic interface/mainwindow.ui -o include/ui_mainwindow.h
 
@@ -9,26 +9,26 @@ function build() {
     -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc \
     -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++ \
     -H/home/saif/Desktop/Folders/University/OS/Project \
-    -B/home/saif/Desktop/Folders/University/OS/Project/build -G Ninja > /dev/null 2>&1 >> ./logs/build.log    
+    -B/home/saif/Desktop/Folders/University/OS/Project/build -G Ninja &>> ./logs/build.log    
 }
 
 function run_build() {
     
     # run the executable
-    echo "" > /dev/null 2>&1 >> ./logs/build.log
-    echo "---------" > /dev/null 2>&1 >> ./logs/build.log
-    echo "[RUN] Running executable ... " > /dev/null 2>&1 >> ./logs/build.log
-    echo "---------" > /dev/null 2>&1 >> ./logs/build.log
-    build/Fizz > /dev/null 2>&1 >> ./logs/build.log
+    echo "" &>> ./logs/build.log
+    echo "---------" &>> ./logs/build.log
+    echo "[RUN] Running executable ... " &>> ./logs/build.log
+    echo "---------" &>> ./logs/build.log
+    build/Fizz &>> ./logs/build.log
 }
 
 function test_build() {
     # run the tests
-    echo "" > /dev/null 2>&1 >> ./logs/build.log
-    echo "---------" > /dev/null 2>&1 >> ./logs/build.log
-    echo "[TEST] Running tests ... " > /dev/null 2>&1 >> ./logs/build.log
-    echo "---------" > /dev/null 2>&1 >> ./logs/build.log
-    cmake --build /home/saif/Desktop/Folders/University/OS/Project/build --config Debug --target all -- -j 6 > /dev/null 2>&1 >> ./logs/build.log
+    echo "" &>> ./logs/build.log
+    echo "---------" &>> ./logs/build.log
+    echo "[TEST] Running tests ... " &>> ./logs/build.log
+    echo "---------" &>> ./logs/build.log
+    cmake --build /home/saif/Desktop/Folders/University/OS/Project/build --config Debug --target all -- -j 6 &>> ./logs/build.log
 }
 
 function clear_log() {
@@ -38,11 +38,11 @@ function clear_log() {
 }
 
 function generate_docs() {
-    echo "" > /dev/null 2>&1 >> ./logs/build.log
-    echo "---------" > /dev/null 2>&1 >> ./logs/build.log
-    echo "[DOC] Generating documentation ... " > /dev/null 2>&1 >> ./logs/build.log
-    echo "---------" > /dev/null 2>&1 >> ./logs/build.log
-    doxygen docs/Doxyfile > /dev/null 2>&1 >> ./logs/build.log
+    echo "" &>> ./logs/build.log
+    echo "---------" &>> ./logs/build.log
+    echo "[DOC] Generating documentation ... " &>> ./logs/build.log
+    echo "---------" &>> ./logs/build.log
+    doxygen docs/Doxyfile &>> ./logs/build.log
 }
 
 # MAIN functionality starts here

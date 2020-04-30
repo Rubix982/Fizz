@@ -26,8 +26,30 @@ class systemInfo
 
     public:
 
+        /*!< Methods */
         systemInfo(void);
+        void testing_public(void);
 
+        std::string getHostName(void);
+        std::string getPlatform(void);
+        std::string getDistribution(void);
+        kernelInfo getKernelInfo(void);
+        std::string getCPUModel(void);
+        int getCPUCores(void);
+        std::string getCPUSpeed(void);
+
+        void resolveHostName(void);
+        void resolvePlatform(void);
+        void resolveDistribution(void);
+        void resolveKernelInfo(void);
+        void resolveCPUModel(void);
+        void resolveCPUCores(void);
+        void resolveCPUSpeed(void);
+
+    private:
+
+        /*!< Attributes */
+    
         //! the system hostname
         std::string hostName;    
         
@@ -49,18 +71,6 @@ class systemInfo
         //! the CPU speed
         std::string cpuSpeed;
 
-        void testing_public(void);
-
-    private:
-    
-        void testing(void);
 };
-
-void systemInfo::testing_public(void)
-{
-
-
-
-}
 
 #endif
