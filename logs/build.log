@@ -1,4 +1,3 @@
-
 ---------
 [BUILD] Building for target ... 
 ---------
@@ -34,25 +33,32 @@ Not searching for unused variables given on the command line.
 ---------
 [TEST] Running tests ... 
 ---------
-[1/17] Automatic MOC and UIC for target Fizz
-[2/17] Building CXX object googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
-[3/17] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
-[4/17] Building CXX object CMakeFiles/Fizz.dir/Fizz_autogen/mocs_compilation.cpp.o
-[5/17] Building CXX object CMakeFiles/Fizz.dir/src/main.cpp.o
-[6/17] Building CXX object CMakeFiles/Fizz.dir/src/mainwindow.cpp.o
-[7/17] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
-[8/17] Linking CXX executable Fizz
-[9/17] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
-[10/17] Linking CXX static library lib/libgtestd.a
-[11/17] Linking CXX static library lib/libgtest_maind.a
-[12/17] Linking CXX static library lib/libgmockd.a
-[13/17] Automatic MOC and UIC for target ExampleTest
+[1/20] Automatic MOC and UIC for target Fizz
+[2/20] Building CXX object googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+[3/20] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
+[4/20] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/networks.cpp.o
+[5/20] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/usage.cpp.o
+[6/20] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/systemInfo.cpp.o
+[7/20] Building CXX object CMakeFiles/Fizz.dir/Fizz_autogen/mocs_compilation.cpp.o
+[8/20] Building CXX object CMakeFiles/Fizz.dir/src/main.cpp.o
+[9/20] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
+[10/20] Building CXX object CMakeFiles/Fizz.dir/src/mainwindow.cpp.o
+../src/mainwindow.cpp: In member function ‘void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint&)’:
+../src/mainwindow.cpp:16:76: warning: unused parameter ‘pos’ [-Wunused-parameter]
+   16 | void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint &pos)
+      |                                                              ~~~~~~~~~~~~~~^~~
+[11/20] Linking CXX executable Fizz
+[12/20] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+[13/20] Linking CXX static library lib/libgtestd.a
+[14/20] Linking CXX static library lib/libgtest_maind.a
+[15/20] Linking CXX static library lib/libgmockd.a
+[16/20] Automatic MOC and UIC for target ExampleTest
 AutoGen warning: "SRC:/test/include/ExampleTest.hpp" is empty.
 
-[14/17] Building CXX object test/CMakeFiles/ExampleTest.dir/ExampleTest_autogen/mocs_compilation.cpp.o
-[15/17] Linking CXX static library lib/libgmock_maind.a
-[16/17] Building CXX object test/CMakeFiles/ExampleTest.dir/src/ExampleTest.cpp.o
-[17/17] Linking CXX executable test/ExampleTest
+[17/20] Building CXX object test/CMakeFiles/ExampleTest.dir/ExampleTest_autogen/mocs_compilation.cpp.o
+[18/20] Linking CXX static library lib/libgmock_maind.a
+[19/20] Building CXX object test/CMakeFiles/ExampleTest.dir/src/ExampleTest.cpp.o
+[20/20] Linking CXX executable test/ExampleTest
 
 ---------
 [DOC] Generating documentation ... 
@@ -66,8 +72,19 @@ Searching for dia files...
 Searching for files to exclude
 Searching INPUT for files to process...
 Searching for files in directory /home/saif/Desktop/Folders/University/OS/Project/src
+Searching for files in directory /home/saif/Desktop/Folders/University/OS/Project/src/dashboard
+Searching for files in directory /home/saif/Desktop/Folders/University/OS/Project/src/graphs
+Searching for files in directory /home/saif/Desktop/Folders/University/OS/Project/src/packages
+Searching for files in directory /home/saif/Desktop/Folders/University/OS/Project/src/processes
+Searching for files in directory /home/saif/Desktop/Folders/University/OS/Project/src/services
 Reading and parsing tag files
 Parsing files
+Preprocessing /home/saif/Desktop/Folders/University/OS/Project/src/dashboard/networks.cpp...
+Parsing file /home/saif/Desktop/Folders/University/OS/Project/src/dashboard/networks.cpp...
+Preprocessing /home/saif/Desktop/Folders/University/OS/Project/src/dashboard/systemInfo.cpp...
+Parsing file /home/saif/Desktop/Folders/University/OS/Project/src/dashboard/systemInfo.cpp...
+Preprocessing /home/saif/Desktop/Folders/University/OS/Project/src/dashboard/usage.cpp...
+Parsing file /home/saif/Desktop/Folders/University/OS/Project/src/dashboard/usage.cpp...
 Preprocessing /home/saif/Desktop/Folders/University/OS/Project/src/main.cpp...
 Parsing file /home/saif/Desktop/Folders/University/OS/Project/src/main.cpp...
 Preprocessing /home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp...

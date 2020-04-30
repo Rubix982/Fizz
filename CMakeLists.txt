@@ -43,6 +43,7 @@ set(INTERFACE_DIR interface)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTOUIC_SEARCH_PATHS ${INTERFACE_DIR})
+# set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -L . -lpthread")
 
 # For TS { translation }  file s
 set(TS_FILE_DIR ts_files)
@@ -68,7 +69,10 @@ set(UI
 set(SOURCES
         ${SRC_DIR}/${ENTRY_POINT}
         ${SRC_DIR}/mainwindow.cpp
-        # ${SRC_DIR}/moc_mainwindow.cpp 
+        
+        ${SRC_DIR}/dashboard/networks.cpp
+        ${SRC_DIR}/dashboard/usage.cpp
+        ${SRC_DIR}/dashboard/systemInfo.cpp
 )
 
 # Adding the headers
@@ -76,6 +80,10 @@ set(HEADERS
         ${INCLUDE_DIR}/mainwindow.h
         ${INCLUDE_DIR}/ui_mainwindow.h
         ${INCLUDE_DIR}/moc_predefs.h 
+        
+        ${INCLUDE_DIR}/dashboard/networks.h
+        ${INCLUDE_DIR}/dashboard/usage.h
+        ${INCLUDE_DIR}/dashboard/systemInfo.h
 )
 
 # Adding the TS files
