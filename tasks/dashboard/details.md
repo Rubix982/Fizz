@@ -41,3 +41,44 @@
 
 - See here [GPU programming wit CPP](https://linuxhint.com/gpu-programming-cpp/)
 - Also [Linux commands to display your hardware information](https://opensource.com/article/19/9/linux-commands-hardware-information)
+
+## Networking
+
+- Related information to research for
+  - TCP vs UDP
+  - Bandwidth
+  - Network interface
+    - lo, ethos5, 
+  - VPNs
+  - Network bridges
+  - IFB devices
+  - Bond interfaces 
+  - IP Traffic
+  - Total IPv6 traffic
+  - IP Packets ( `noRoutes`, `InNoRoutes`)
+  - RST, Userclosed `TCPAbortOnClose`
+  - Sockets
+  - TCP, `baddata`, `userclosed`
+  - Broadcasts, 
+    - IP Broadcast bandwidth
+    - IP Broadcast packets
+  - Multicast
+    - IP Multicast bandwidth
+  - ECP
+  - Network Interfaces
+    - `docker0`, `wlp3s0`
+  - Firewall ( netfilter )
+
+## Disk Usage
+
+- `systemd services`, `cpu`, `mem`, `swap`, `disk`
+- `cpu`, Systemd Services CPU utilization 
+- `mem`, Systemd Services Used Memory Without Cache
+- `swap`, Systemd Services Swap Memory Used
+- `disk`, Systemd Services Throttle Disk Read Bandwidth (services.throttle_io_read)
+- 
+
+### References
+
+- Errors encountered during the reception of IP packets. noroutes (InNoRoutes) counts packets that were dropped because there was no route to send them. truncated (InTruncatedPkts) counts packets which is being discarded because the datagram frame didn't carry enough data. checksum (InCsumErrors) counts packets that were dropped because they had wrong checksum.
+- Explicit Congestion Notification (ECN) is a TCP extension that allows end-to-end notification of network congestion without dropping packets. ECN is an optional feature that may be used between two ECN-enabled endpoints when the underlying network infrastructure also supports it.
