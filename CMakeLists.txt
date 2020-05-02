@@ -24,6 +24,7 @@ if(CMAKE_VERSION VERSION_LESS "3.7.0")
 endif()
 
 # For QT
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
@@ -56,8 +57,8 @@ set(ENTRY_POINT main.cpp)
 include_directories(${INCLUDE_DIR})
 
 # Use Qt5 resources
-set(RESOURCE 
-    resources/resources.qrc
+set(RESOURCES
+    ./resources/qrcFiles/style.qrc
 )
 
 # Use QT5 ui
@@ -103,6 +104,12 @@ include_directories(${Qt5OpenGL_INCLUDES})
 
 # Add some compiler options
 add_compile_options(-Wall -Wextra -O2 -fPIC)
+
+message(STATUS "UI detected: ${UI}")
+message(STATUS "RESOURCES detected: ${RESOURCES}")
+message(STATUS "SOURCES detected: ${SOURCES}")
+message(STATUS "HEADERS detected: ${HEADERS}")
+message(STATUS "TS_FILES detected: ${TS_FILES_ALL}")
 
 if(ANDROID)
     add_library(${PROJECT_NAME} ${UI} ${RESOURCES} ${SOURCES} ${HEADERS}  ${TS_FILES_ALL} )

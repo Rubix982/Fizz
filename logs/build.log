@@ -2,6 +2,35 @@
 [BUILD] Building for target ... 
 ---------
 Not searching for unused variables given on the command line.
+-- The C compiler identification is GNU 9.2.1
+-- The CXX compiler identification is GNU 9.2.1
+-- Check for working C compiler: /usr/bin/gcc
+-- Check for working C compiler: /usr/bin/gcc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/g++
+-- Check for working CXX compiler: /usr/bin/g++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found PythonInterp: /usr/bin/python (found version "3.8.1") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- UI detected: interface/mainwindow.ui
+-- RESOURCES detected: ./resources/resourceCollectionFiles/style.qrc
+-- SOURCES detected: src/main.cpp;src/mainwindow.cpp;src/dashboard/networks.cpp;src/dashboard/usage.cpp;src/dashboard/systemInfo.cpp
+-- HEADERS detected: include/mainwindow.h;include/ui_mainwindow.h;include/moc_predefs.h;include/dashboard/networks.h;include/dashboard/usage.h;include/dashboard/systemInfo.h
+-- TS_FILES detected: ts_files/testing_with_cmake_en_001.ts
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/saif/Desktop/Folders/University/OS/Project/build
@@ -9,18 +38,42 @@ Not searching for unused variables given on the command line.
 ---------
 [TEST] Running tests ... 
 ---------
-[1/19] Automatic MOC and UIC for target Fizz
-[2/18] Automatic MOC and UIC for target gtest
-[3/16] Automatic MOC and UIC for target gtest_main
-[4/14] Automatic MOC and UIC for target gmock
-[5/12] Automatic MOC and UIC for target ExampleTest
-[6/10] Automatic MOC and UIC for target gmock_main
-[7/8] Building CXX object CMakeFiles/Fizz.dir/src/mainwindow.cpp.o
+[1/30] Automatic MOC and UIC for target gtest
+[2/30] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/gtest_autogen/mocs_compilation.cpp.o
+[3/30] Automatic MOC and UIC for target Fizz
+[4/30] Automatic RCC for resources/resourceCollectionFiles/style.qrc
+[5/30] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/networks.cpp.o
+[6/30] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/usage.cpp.o
+[7/30] Building CXX object CMakeFiles/Fizz.dir/Fizz_autogen/OW5WOVFFYC/qrc_style.cpp.o
+[8/30] Building CXX object CMakeFiles/Fizz.dir/Fizz_autogen/mocs_compilation.cpp.o
+[9/30] Building CXX object CMakeFiles/Fizz.dir/src/mainwindow.cpp.o
 ../src/mainwindow.cpp: In member function ‘void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint&)’:
 ../src/mainwindow.cpp:16:76: warning: unused parameter ‘pos’ [-Wunused-parameter]
    16 | void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint &pos)
       |                                                              ~~~~~~~~~~~~~~^~~
-[8/8] Linking CXX executable Fizz
+[10/30] Building CXX object CMakeFiles/Fizz.dir/src/main.cpp.o
+[11/30] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+[12/30] Linking CXX static library lib/libgtestd.a
+[13/30] Automatic MOC and UIC for target gmock
+[14/30] Automatic MOC and UIC for target gtest_main
+[15/30] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/gmock_autogen/mocs_compilation.cpp.o
+[16/30] Building CXX object googletest/googletest/CMakeFiles/gtest_main.dir/gtest_main_autogen/mocs_compilation.cpp.o
+[17/30] Building CXX object googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+[18/30] Linking CXX static library lib/libgtest_maind.a
+[19/30] Automatic MOC and UIC for target ExampleTest
+AutoGen warning: "SRC:/test/include/ExampleTest.hpp" is empty.
+
+[20/30] Building CXX object test/CMakeFiles/ExampleTest.dir/ExampleTest_autogen/mocs_compilation.cpp.o
+[21/30] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
+[22/30] Linking CXX static library lib/libgmockd.a
+[23/30] Automatic MOC and UIC for target gmock_main
+[24/30] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/gmock_main_autogen/mocs_compilation.cpp.o
+[25/30] Building CXX object test/CMakeFiles/ExampleTest.dir/src/ExampleTest.cpp.o
+[26/30] Linking CXX executable test/ExampleTest
+[27/30] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/systemInfo.cpp.o
+[28/30] Linking CXX executable Fizz
+[29/30] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
+[30/30] Linking CXX static library lib/libgmock_maind.a
 
 ---------
 [DOC] Generating documentation ... 
@@ -166,6 +219,43 @@ Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/256x25
 Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/512x512/legacy/"
 Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/scalable/legacy/"
 Invalid Context= "UI" line for icon theme:  "/usr/share/icons/Adwaita/scalable/ui/"
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
+Unknown property backgronud-image
 [SYSTEM_INFO.CPP] Hello, World!
 [SYSTEM_INFO.CPP] Hello, world, from systemInfo.cpp -> constructor
 archlinux

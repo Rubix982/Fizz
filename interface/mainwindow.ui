@@ -24,7 +24,12 @@
      </rect>
     </property>
     <property name="autoFillBackground">
-     <bool>true</bool>
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">padding: 2px;
+margin: 2px;
+margin-right: 20px;</string>
     </property>
     <property name="currentIndex">
      <number>0</number>
@@ -43,7 +48,7 @@
        </rect>
       </property>
       <property name="autoFillBackground">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -62,7 +67,7 @@
        </rect>
       </property>
       <property name="autoFillBackground">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -78,6 +83,9 @@
          <width>401</width>
          <height>301</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">backgronud-image: url(:/icons/urgo67k76er41.jpg);</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -108,7 +116,7 @@ p, li { white-space: pre-wrap; }
        </rect>
       </property>
       <property name="autoFillBackground">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
