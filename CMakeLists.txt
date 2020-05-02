@@ -92,6 +92,16 @@ set(TS_FILES_ALL
         ${TS_FILE_DIR}/${TS_FILES} 
 )
 
+################## For CLANG FORMAT ##################
+
+# Getting all the project files
+
+include(cmake/clang-cxx-dev-tools.cmake)
+
+# Reference can be found here, https://www.labri.fr/perso/fleury/posts/programming/using-clang-tidy-and-clang-format.html
+
+################## END For CLANG FORMAT ##################
+
 # Find QT5
 find_package(Qt5 COMPONENTS Core Widgets LinguistTools OpenGL REQUIRED)
 # Add Qt5 definitions and includes to build libraries.

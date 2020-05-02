@@ -74,9 +74,7 @@ systemInfo::getCPUSpeed(void)
 }
 
 //!<
-void
-systemInfo::resolveHostName(void)
-{
+void systemInfo::resolveHostName(void)                                    {
     printf("[SYSTEM_INFO.CPP] Hello, world, from systemInfo.cpp -> constructor\n");
 
     char str[BUFFER] = {0};
