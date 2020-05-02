@@ -96,7 +96,48 @@ set(TS_FILES_ALL
 
 # Getting all the project files
 
-include(cmake/clang-cxx-dev-tools.cmake)
+# include(cmake/clang-cxx-dev-tools.cmake)
+
+# Additional targets to perform clang-format/clang-tidy
+# Get all project files
+file(GLOB_RECURSE
+     ALL_CXX_SOURCE_FILES
+     include/*.[chi]pp include/*.[chi]xx include/*.cc include/*.hh include/*.h include/*.ii include/*.[CHI]
+     src/*.[chi]pp src/*.[chi]xx src/*.cc src/*.hh src/*.h src/*.ii src/*.[CHI]
+     test/*.[chi]pp test/*.[chi]xx test/*.cc test/*.hh test/*.h test/*.ii test/*.[CHI]
+     )
+
+message(STATUS "All files found by GLOB_RECURSE:")
+
+message(STATUS "           ${ALL_CXX_SOURCE_FILES}" )
+
+# Adding clang-format target if executable is found
+find_program(CLANG_FORMAT "clang-format")
+if(CLANG_FORMAT)
+    message(STATUS "[CMAKE] Found clang-format")
+  add_custom_target(
+    clang-format
+    COMMAND /usr/bin/clang-format
+    -i
+    -style="./clang-format"
+    ${ALL_CXX_SOURCE_FILES}
+    )
+endif()
+
+# Adding clang-tidy target if executable is found
+find_program(CLANG_TIDY "clang-tidy")
+if(CLANG_TIDY)
+message(STATUS "[CMAKE] Found from clang-tidy")
+add_custom_target(
+    clang-tidy
+    COMMAND /usr/bin/clang-tidy
+    ${ALL_CXX_SOURCE_FILES}
+    -config=''
+    --
+    -std=c++11
+    ${INCLUDE_DIRECTORIES}
+    )
+endif()
 
 # Reference can be found here, https://www.labri.fr/perso/fleury/posts/programming/using-clang-tidy-and-clang-format.html
 
