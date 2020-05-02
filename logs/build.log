@@ -16,7 +16,7 @@ Not searching for unused variables given on the command line.
 -- Detecting CXX compiler ABI info - done
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Found PythonInterp: /usr/bin/python (found version "3.8.1")
+-- Found PythonInterp: /usr/bin/python (found version "3.8.1") 
 -- Looking for pthread.h
 -- Looking for pthread.h - found
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
