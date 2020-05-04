@@ -25,7 +25,7 @@ Not searching for unused variables given on the command line.
 -- Looking for pthread_create in pthreads - not found
 -- Looking for pthread_create in pthread
 -- Looking for pthread_create in pthread - found
--- Found Threads: TRUE
+-- Found Threads: TRUE  
 -- All files found by GLOB_RECURSE:
 --            /home/saif/Desktop/Folders/University/OS/Project/include/dashboard/networks.h;/home/saif/Desktop/Folders/University/OS/Project/include/dashboard/systemInfo.h;/home/saif/Desktop/Folders/University/OS/Project/include/dashboard/usage.h;/home/saif/Desktop/Folders/University/OS/Project/include/mainwindow.h;/home/saif/Desktop/Folders/University/OS/Project/include/moc_predefs.h;/home/saif/Desktop/Folders/University/OS/Project/include/standardHeaders.h;/home/saif/Desktop/Folders/University/OS/Project/include/ui_mainwindow.h;/home/saif/Desktop/Folders/University/OS/Project/src/dashboard/networks.cpp;/home/saif/Desktop/Folders/University/OS/Project/src/dashboard/systemInfo.cpp;/home/saif/Desktop/Folders/University/OS/Project/src/dashboard/usage.cpp;/home/saif/Desktop/Folders/University/OS/Project/src/main.cpp;/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp;/home/saif/Desktop/Folders/University/OS/Project/src/moc_mainwindow.cpp;/home/saif/Desktop/Folders/University/OS/Project/test/include/ExampleTest.hpp;/home/saif/Desktop/Folders/University/OS/Project/test/src/ExampleTest.cpp
 -- [CMAKE] Found clang-format
@@ -49,12 +49,12 @@ Not searching for unused variables given on the command line.
 [5/30] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/usage.cpp.o
 [6/30] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/networks.cpp.o
 [7/30] Building CXX object CMakeFiles/Fizz.dir/Fizz_autogen/HBIHOLR4PS/qrc_style.cpp.o
-[8/30] Building CXX object CMakeFiles/Fizz.dir/src/main.cpp.o
-[9/30] Building CXX object CMakeFiles/Fizz.dir/Fizz_autogen/mocs_compilation.cpp.o
+[8/30] Building CXX object CMakeFiles/Fizz.dir/Fizz_autogen/mocs_compilation.cpp.o
+[9/30] Building CXX object CMakeFiles/Fizz.dir/src/main.cpp.o
 [10/30] Building CXX object CMakeFiles/Fizz.dir/src/mainwindow.cpp.o
 ../src/mainwindow.cpp: In member function ‘void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint&)’:
-../src/mainwindow.cpp:16:76: warning: unused parameter ‘pos’ [-Wunused-parameter]
-   16 | void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint &pos)
+../src/mainwindow.cpp:169:76: warning: unused parameter ‘pos’ [-Wunused-parameter]
+  169 | void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint &pos)
       |                                                              ~~~~~~~~~~~~~~^~~
 [11/30] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
 [12/30] Linking CXX static library lib/libgtestd.a
@@ -75,9 +75,9 @@ AutoGen warning: "SRC:/test/include/ExampleTest.hpp" is empty.
 [25/30] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/gmock_main_autogen/mocs_compilation.cpp.o
 [26/30] Linking CXX executable test/ExampleTest
 [27/30] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/systemInfo.cpp.o
-[28/30] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
-[29/30] Linking CXX static library lib/libgmock_maind.a
-[30/30] Linking CXX executable Fizz
+[28/30] Linking CXX executable Fizz
+[29/30] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
+[30/30] Linking CXX static library lib/libgmock_maind.a
 
 ---------
 [DOC] Generating documentation ... 
@@ -88,9 +88,24 @@ AutoGen warning: "SRC:/test/include/ExampleTest.hpp" is empty.
 /home/saif/Desktop/Folders/University/OS/Project/src/dashboard/systemInfo.cpp:228: warning: documented symbol 'std::string systemInfo::getDataFromBuffer' was not declared or defined.
 /home/saif/Desktop/Folders/University/OS/Project/src/dashboard/systemInfo.cpp:230: warning: documented symbol 'systemInfo::~systemInfo' was not declared or defined.
 /home/saif/Desktop/Folders/University/OS/Project/src/dashboard/usage.cpp:4: warning: documented symbol 'void usage::testing_public' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:4: warning: documented symbol 'MainWindow::MainWindow' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:11: warning: documented symbol 'MainWindow::~MainWindow' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:16: warning: documented symbol 'void MainWindow::on_centralwidget_customContextMenuRequested' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:6: warning: documented symbol 'MainWindow::MainWindow' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:13: warning: documented symbol 'void MainWindow::setDefaultLook' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:37: warning: documented symbol 'void MainWindow::setDashboardContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:46: warning: documented symbol 'void MainWindow::setDashboardStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:55: warning: documented symbol 'void MainWindow::setusage_MainFrameContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:60: warning: documented symbol 'void MainWindow::setusage_MainFrameStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:65: warning: documented symbol 'void MainWindow::setsystemInfo_MainFrameContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:90: warning: documented symbol 'void MainWindow::setsystemInfo_MainFrameStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:96: warning: documented symbol 'void MainWindow::setnetworking_MainFrameContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:101: warning: documented symbol 'void MainWindow::setnetworking_MainFrameStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:110: warning: documented symbol 'void MainWindow::setServicesContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:115: warning: documented symbol 'void MainWindow::setServicesStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:124: warning: documented symbol 'void MainWindow::setProcessesContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:129: warning: documented symbol 'void MainWindow::setProcessesStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:138: warning: documented symbol 'void MainWindow::setGraphsContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:143: warning: documented symbol 'void MainWindow::setGraphsStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:152: warning: documented symbol 'void MainWindow::setPackageContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:169: warning: documented symbol 'void MainWindow::on_centralwidget_customContextMenuRequested' was not declared or defined.
 /home/saif/Desktop/Folders/University/OS/Project/src/moc_mainwindow.cpp:58: warning: documented symbol 'void MainWindow::qt_static_metacall' was not declared or defined.
 /home/saif/Desktop/Folders/University/OS/Project/src/moc_mainwindow.cpp:66: warning: documented symbol 'const QT_INIT_METAOBJECT QMetaObject MainWindow::staticMetaObject' was not declared or defined.
 /home/saif/Desktop/Folders/University/OS/Project/src/moc_mainwindow.cpp:76: warning: documented symbol 'const QMetaObject * MainWindow::metaObject' was not declared or defined.
@@ -223,43 +238,9 @@ Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/256x25
 Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/512x512/legacy/"
 Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/scalable/legacy/"
 Invalid Context= "UI" line for icon theme:  "/usr/share/icons/Adwaita/scalable/ui/"
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
-Unknown property backgronud-image
+[MAINWINDOW.CPP] Testing - fprintf
+[MAINWINDOW.CPP] Testing - printf
+[MAINWINDOW.CPP] Testing - cout 
 [SYSTEM_INFO.CPP] Hello, World!
 [SYSTEM_INFO.CPP] Hello, world, from systemInfo.cpp -> constructor
 archlinux

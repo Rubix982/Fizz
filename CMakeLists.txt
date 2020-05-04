@@ -62,7 +62,7 @@ set(RESOURCES
 )
 
 # Use QT5 ui
-set(UI 
+set(UI
     ${INTERFACE_DIR}/mainwindow.ui
 )
 
@@ -70,7 +70,7 @@ set(UI
 set(SOURCES
         ${SRC_DIR}/${ENTRY_POINT}
         ${SRC_DIR}/mainwindow.cpp
-        
+
         ${SRC_DIR}/dashboard/networks.cpp
         ${SRC_DIR}/dashboard/usage.cpp
         ${SRC_DIR}/dashboard/systemInfo.cpp
@@ -80,8 +80,8 @@ set(SOURCES
 set(HEADERS
         ${INCLUDE_DIR}/mainwindow.h
         ${INCLUDE_DIR}/ui_mainwindow.h
-        ${INCLUDE_DIR}/moc_predefs.h 
-        
+        ${INCLUDE_DIR}/moc_predefs.h
+
         ${INCLUDE_DIR}/dashboard/networks.h
         ${INCLUDE_DIR}/dashboard/usage.h
         ${INCLUDE_DIR}/dashboard/systemInfo.h
@@ -89,14 +89,10 @@ set(HEADERS
 
 # Adding the TS files
 set(TS_FILES_ALL
-        ${TS_FILE_DIR}/${TS_FILES} 
+        ${TS_FILE_DIR}/${TS_FILES}
 )
 
 ################## For CLANG FORMAT ##################
-
-# Getting all the project files
-
-# include(cmake/clang-cxx-dev-tools.cmake)
 
 # Additional targets to perform clang-format/clang-tidy
 # Get all project files

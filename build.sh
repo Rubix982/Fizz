@@ -2,18 +2,18 @@ function build() {
     echo "---------" &>> ./logs/build.log
     echo "[BUILD] Building for target ... " &>> ./logs/build.log
     echo "---------" &>> ./logs/build.log
-    
+
     uic interface/mainwindow.ui -o include/ui_mainwindow.h
 
     cmake --target all --no-warn-unused-cli -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE \
     -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc \
     -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++ \
     -H/home/saif/Desktop/Folders/University/OS/Project \
-    -B/home/saif/Desktop/Folders/University/OS/Project/build -G Ninja &>> ./logs/build.log    
+    -B/home/saif/Desktop/Folders/University/OS/Project/build -G Ninja &>> ./logs/build.log
 }
 
 function run_build() {
-    
+
     # run the executable
     echo "" &>> ./logs/build.log
     echo "---------" &>> ./logs/build.log
@@ -85,10 +85,10 @@ then
 
     # printf "In test\n"
     test_build # Run the tests
-    
+
 elif [ "$1" = "run" ]
 then
-    
+
     # printf "In run\n"
     run_build  # run the build
 
@@ -96,6 +96,6 @@ elif [ "$1" = "clear" ]
 then
 
     # printf "In clear\n"
-    clear_log # Clear the log file    
+    clear_log # Clear the log file
 
 fi
