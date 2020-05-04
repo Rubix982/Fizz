@@ -4,8 +4,8 @@
 
 A UI and dashboard for system processes, memory, CPU usage, and common Operating System statistics. Inspired by [stacer](https://github.com/oguzhaninan/Stacer), and [netdata](https://github.com/netdata/netdata).
 
-Designed using 
-- Cmake 
+Designed using
+- Cmake
 - QMake
 - QT
 
@@ -13,7 +13,7 @@ Designed using
 
 ## The Folder Structure
 
-- ***docs***: Should contain documentation - empty for now
+- ***docs***: Contain documentation, created using *doxygen*.
 - **googletest**: Testing module required for making and running required tests
 - ***img***: Should contain any required or needed images for the project
 - ***include***: Includes the header / .ui files
@@ -27,7 +27,7 @@ Designed using
 - ***TODO***: Info about tasks remaining, done, and current.
 - ***TSFiles***: Contains files for translation with QtLinguistic
 
---- 
+---
 
 ## Root File Structure
 
