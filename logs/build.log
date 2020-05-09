@@ -51,6 +51,10 @@ Not searching for unused variables given on the command line.
 [7/30] Building CXX object CMakeFiles/Fizz.dir/Fizz_autogen/HBIHOLR4PS/qrc_style.cpp.o
 [8/30] Building CXX object CMakeFiles/Fizz.dir/Fizz_autogen/mocs_compilation.cpp.o
 [9/30] Building CXX object CMakeFiles/Fizz.dir/src/main.cpp.o
+../src/main.cpp: In function ‘int main(int, char**)’:
+../src/main.cpp:17:9: warning: variable ‘array’ set but not used [-Wunused-but-set-variable]
+   17 |     int array[10];
+      |         ^~~~~
 [10/30] Building CXX object CMakeFiles/Fizz.dir/src/mainwindow.cpp.o
 ../src/mainwindow.cpp: In member function ‘void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint&)’:
 ../src/mainwindow.cpp:169:76: warning: unused parameter ‘pos’ [-Wunused-parameter]
@@ -59,8 +63,8 @@ Not searching for unused variables given on the command line.
 [11/30] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
 [12/30] Linking CXX static library lib/libgtestd.a
 [13/30] Automatic MOC and UIC for target gmock
-[14/30] Automatic MOC and UIC for target gtest_main
-[15/30] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/gmock_autogen/mocs_compilation.cpp.o
+[14/30] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/gmock_autogen/mocs_compilation.cpp.o
+[15/30] Automatic MOC and UIC for target gtest_main
 [16/30] Building CXX object googletest/googletest/CMakeFiles/gtest_main.dir/gtest_main_autogen/mocs_compilation.cpp.o
 [17/30] Building CXX object googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
 [18/30] Linking CXX static library lib/libgtest_maind.a
@@ -68,13 +72,13 @@ Not searching for unused variables given on the command line.
 AutoGen warning: "SRC:/test/include/ExampleTest.hpp" is empty.
 
 [20/30] Building CXX object test/CMakeFiles/ExampleTest.dir/ExampleTest_autogen/mocs_compilation.cpp.o
-[21/30] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
-[22/30] Building CXX object test/CMakeFiles/ExampleTest.dir/src/ExampleTest.cpp.o
-[23/30] Linking CXX static library lib/libgmockd.a
-[24/30] Automatic MOC and UIC for target gmock_main
-[25/30] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/gmock_main_autogen/mocs_compilation.cpp.o
-[26/30] Linking CXX executable test/ExampleTest
-[27/30] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/systemInfo.cpp.o
+[21/30] Building CXX object test/CMakeFiles/ExampleTest.dir/src/ExampleTest.cpp.o
+[22/30] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/systemInfo.cpp.o
+[23/30] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
+[24/30] Linking CXX static library lib/libgmockd.a
+[25/30] Linking CXX executable test/ExampleTest
+[26/30] Automatic MOC and UIC for target gmock_main
+[27/30] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/gmock_main_autogen/mocs_compilation.cpp.o
 [28/30] Linking CXX executable Fizz
 [29/30] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
 [30/30] Linking CXX static library lib/libgmock_maind.a
@@ -222,8 +226,46 @@ lookup cache used 0/65536 hits=0 misses=0
 finished...
 
 ---------
-[RUN] Running executable ... 
+[CPPCHECK] Running cppcheck ... 
 ---------
+Checking misc/native_cpuid.cpp ...
+1/13 files checked 0% done
+Checking src/dashboard/networks.cpp ...
+2/13 files checked 1% done
+Checking src/dashboard/systemInfo.cpp ...
+3/13 files checked 43% done
+Checking src/dashboard/usage.cpp ...
+4/13 files checked 44% done
+Checking src/main.cpp ...
+src/main.cpp:18:10: error: Array 'array[10]' accessed at index 10, which is out of bounds. [arrayIndexOutOfBounds]
+    array[10] = 0;
+         ^
+5/13 files checked 48% done
+Checking src/mainwindow.cpp ...
+6/13 files checked 69% done
+Checking src/moc_mainwindow.cpp ...
+7/13 files checked 88% done
+Checking tasks/dashboard/src/dashboard.cpp ...
+8/13 files checked 99% done
+Checking tasks/packages/src/packages.cpp ...
+9/13 files checked 99% done
+Checking tasks/processes/src/processes.cpp ...
+10/13 files checked 99% done
+Checking tasks/resources/src/graphs.cpp ...
+11/13 files checked 99% done
+Checking tasks/services/src/services.cpp ...
+12/13 files checked 99% done
+Checking test/src/ExampleTest.cpp ...
+13/13 files checked 100% done
+
+---------
+[RUN + VALGRIND] Running executable ... 
+---------
+==235321== Memcheck, a memory error detector
+==235321== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==235321== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==235321== Command: build/Fizz
+==235321== 
 Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/8x8/legacy/"
 Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/16x16/legacy/"
 Invalid Context= "UI" line for icon theme:  "/usr/share/icons/Adwaita/16x16/ui/"
@@ -238,9 +280,22 @@ Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/256x25
 Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/512x512/legacy/"
 Invalid Context= "Legacy" line for icon theme:  "/usr/share/icons/Adwaita/scalable/legacy/"
 Invalid Context= "UI" line for icon theme:  "/usr/share/icons/Adwaita/scalable/ui/"
-[MAINWINDOW.CPP] Testing - fprintf
-[MAINWINDOW.CPP] Testing - printf
-[MAINWINDOW.CPP] Testing - cout 
 [SYSTEM_INFO.CPP] Hello, World!
 [SYSTEM_INFO.CPP] Hello, world, from systemInfo.cpp -> constructor
 archlinux
+==235321== 
+==235321== HEAP SUMMARY:
+==235321==     in use at exit: 438,256 bytes in 7,319 blocks
+==235321==   total heap usage: 130,531 allocs, 123,212 frees, 20,317,509 bytes allocated
+==235321== 
+==235321== LEAK SUMMARY:
+==235321==    definitely lost: 0 bytes in 0 blocks
+==235321==    indirectly lost: 0 bytes in 0 blocks
+==235321==      possibly lost: 0 bytes in 0 blocks
+==235321==    still reachable: 438,256 bytes in 7,319 blocks
+==235321==         suppressed: 0 bytes in 0 blocks
+==235321== Reachable blocks (those to which a pointer was found) are not shown.
+==235321== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==235321== 
+==235321== For lists of detected and suppressed errors, rerun with: -s
+==235321== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

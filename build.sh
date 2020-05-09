@@ -1,3 +1,11 @@
+function cppcheck_build {
+    echo "" &>> ./logs/build.log
+    echo "---------" &>> ./logs/build.log
+    echo "[CPPCHECK] Running cppcheck ... " &>> ./logs/build.log
+    echo "---------" &>> ./logs/build.log
+    cppcheck -i build -i googletest -i cmake . &>> ./logs/build.log
+}
+
 function build() {
     echo "---------" &>> ./logs/build.log
     echo "[BUILD] Building for target ... " &>> ./logs/build.log
@@ -17,9 +25,9 @@ function run_build() {
     # run the executable
     echo "" &>> ./logs/build.log
     echo "---------" &>> ./logs/build.log
-    echo "[RUN] Running executable ... " &>> ./logs/build.log
+    echo "[RUN + VALGRIND] Running executable ... " &>> ./logs/build.log
     echo "---------" &>> ./logs/build.log
-    build/Fizz &>> ./logs/build.log
+    valgrind --tool=memcheck --leak-check=yes build/Fizz &>> ./logs/build.log
 }
 
 function test_build() {
@@ -65,7 +73,8 @@ then
     build # build the project
     test_build # Run the tests
     generate_docs # generate the relevant documentation
-    run_build # Run the executable
+    cppcheck_build # run cpp check over the files
+    run_build # Run the executable with valgrind
 
 elif [ "$1" = "clean" ]
 then
