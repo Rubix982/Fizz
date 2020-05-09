@@ -1,3 +1,5 @@
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Rubix982/Fizz) 
+
 ![Fizz logo](./img/Logo/logo_transparent.png)
 
 # Fizz
