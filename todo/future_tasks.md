@@ -1,5 +1,4 @@
 # Future Tasks
-
 A list of features that I would like to see in my project
 
 ## Dashboard
@@ -23,7 +22,7 @@ A list of features that I would like to see in my project
     - Memory
     - Shared Memory
     - Window Title
-    
+
 ## Packages
 - A list of packages installed on machine
 - Their folder directory displayed, if asked to
@@ -31,7 +30,7 @@ A list of features that I would like to see in my project
 - Splits packages according to pkg manager
 
 ## Graphs
-- Should show display for 
+- Should show display for
     - CPU usage per core
     - CPU Load Averages
     - Disk Read Write

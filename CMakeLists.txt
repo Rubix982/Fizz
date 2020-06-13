@@ -30,6 +30,9 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+set(CMAKE_CXX_STANDARD_REQUIRED YES)
+set(CMAKE_CXX_EXTENSIONS YES)
+add_definitions(-DQT_DEPRECATED_WARNINGS)
 
 # For testing related configurations
 enable_testing()
@@ -55,6 +58,9 @@ set(ENTRY_POINT main.cpp)
 
 ## Local header files
 include_directories(${INCLUDE_DIR})
+
+# Adding features(build cache + faster linkers) and reasonable defaults(Debug build by default)
+include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/cxxbasics/CXXBasics.cmake")
 
 # Use Qt5 resources
 set(RESOURCES

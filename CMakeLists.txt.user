@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.11.1, 2020-05-04T09:44:21. -->
+<!-- Written by QtCreator 4.11.1, 2020-05-11T18:23:08. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -401,7 +401,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-oPQSGU/qtc-cmake-uQAnKFDV/test</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/home/saif/build-testiing_with_cmake-Desktop-Debug/test</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.2">
     <value type="QString" key="Analyzer.Perf.CallgraphMode">dwarf</value>
@@ -476,7 +476,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-oPQSGU/qtc-cmake-uQAnKFDV</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/home/saif/build-testiing_with_cmake-Desktop-Debug</value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">3</value>
   </valuemap>

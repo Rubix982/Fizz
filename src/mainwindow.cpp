@@ -54,18 +54,7 @@ void MainWindow::setDashboardStyling(void)
 
 void MainWindow::setusage_MainFrameContent(void)
 {
-
-}
-
-void MainWindow::setusage_MainFrameStyling(void)
-{
-
-}
-
-void MainWindow::setsystemInfo_MainFrameContent(void)
-{
-
-    QFile file("resources/html/template.html");
+    QFile file("resources/views/dashboard/html/template.html");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return ;
 
@@ -76,15 +65,28 @@ void MainWindow::setsystemInfo_MainFrameContent(void)
         htmlText += line;
     }
 
-    fprintf( stdout, "[MAINWINDOW.CPP] Testing - fprintf\n");
-    printf("[MAINWINDOW.CPP] Testing - printf\n");
-    std::cout << "[MAINWINDOW.CPP] Testing - cout \n";
-    // std::cout << "[MAINWINDOW.CPP] Testing " << htmlText.toStdString() << "\n";
+    ui->usageInfo->setHtml(htmlText);
+}
+
+void MainWindow::setusage_MainFrameStyling(void)
+{
+
+}
+
+void MainWindow::setsystemInfo_MainFrameContent(void)
+{
+    QFile file("resources/views/dashboard/html/template.html");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return ;
+
+    QString htmlText = "";
+
+    while (!file.atEnd()) {
+        QByteArray line = file.readLine();
+        htmlText += line;
+    }
 
     ui->systemInfo->setHtml(htmlText);
-
-
-
 }
 
 void MainWindow::setsystemInfo_MainFrameStyling(void)
@@ -92,10 +94,20 @@ void MainWindow::setsystemInfo_MainFrameStyling(void)
 
 }
 
-
 void MainWindow::setnetworking_MainFrameContent(void)
 {
+    QFile file("resources/views/dashboard/html/template.html");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return ;
 
+    QString htmlText = "";
+
+    while (!file.atEnd()) {
+        QByteArray line = file.readLine();
+        htmlText += line;
+    }
+
+    ui->networkDetails->setHtml(htmlText);
 }
 
 void MainWindow::setnetworking_MainFrameStyling(void)

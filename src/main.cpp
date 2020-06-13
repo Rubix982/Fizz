@@ -14,9 +14,6 @@
 
 int main(int argc, char *argv[])
 {
-    int array[10];
-    array[10] = 0;
-
     QApplication a(argc, argv);
     MainWindow w;
 
