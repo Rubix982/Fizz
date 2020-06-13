@@ -17,10 +17,10 @@
    <widget class="QTabWidget" name="Fizz">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>801</width>
-      <height>601</height>
+      <x>10</x>
+      <y>10</y>
+      <width>781</width>
+      <height>611</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -48,9 +48,9 @@ margin-right: 20px;</string>
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>60</y>
-        <width>801</width>
-        <height>171</height>
+        <y>0</y>
+        <width>761</width>
+        <height>241</height>
        </rect>
       </property>
       <property name="autoFillBackground">
@@ -65,10 +65,10 @@ margin-right: 20px;</string>
       <widget class="QTextBrowser" name="usageInfo">
        <property name="geometry">
         <rect>
-         <x>0</x>
+         <x>20</x>
          <y>10</y>
-         <width>761</width>
-         <height>141</height>
+         <width>711</width>
+         <height>221</height>
         </rect>
        </property>
       </widget>
@@ -77,9 +77,9 @@ margin-right: 20px;</string>
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>230</y>
-        <width>421</width>
-        <height>331</height>
+        <y>240</y>
+        <width>401</width>
+        <height>321</height>
        </rect>
       </property>
       <property name="autoFillBackground">
@@ -94,10 +94,10 @@ margin-right: 20px;</string>
       <widget class="QTextBrowser" name="systemInfo">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>20</y>
-         <width>401</width>
-         <height>301</height>
+         <x>20</x>
+         <y>10</y>
+         <width>351</width>
+         <height>361</height>
         </rect>
        </property>
        <property name="autoFillBackground">
@@ -121,10 +121,10 @@ p, li { white-space: pre-wrap; }
      <widget class="QFrame" name="network_MainFrame">
       <property name="geometry">
        <rect>
-        <x>420</x>
-        <y>230</y>
-        <width>371</width>
-        <height>341</height>
+        <x>370</x>
+        <y>240</y>
+        <width>391</width>
+        <height>321</height>
        </rect>
       </property>
       <property name="autoFillBackground">
@@ -139,10 +139,10 @@ p, li { white-space: pre-wrap; }
       <widget class="QTextBrowser" name="networkDetails">
        <property name="geometry">
         <rect>
-         <x>50</x>
-         <y>60</y>
-         <width>256</width>
-         <height>192</height>
+         <x>30</x>
+         <y>10</y>
+         <width>331</width>
+         <height>361</height>
         </rect>
        </property>
        <property name="html">

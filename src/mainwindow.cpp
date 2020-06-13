@@ -54,7 +54,7 @@ void MainWindow::setDashboardStyling(void)
 
 void MainWindow::setusage_MainFrameContent(void)
 {
-    QFile file("resources/views/dashboard/html/template.html");
+    QFile file("resources/views/dashboard/html/usageInfo.html");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return ;
 
@@ -75,7 +75,7 @@ void MainWindow::setusage_MainFrameStyling(void)
 
 void MainWindow::setsystemInfo_MainFrameContent(void)
 {
-    QFile file("resources/views/dashboard/html/template.html");
+    QFile file("resources/views/dashboard/html/systemInfo.html");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return ;
 
@@ -96,7 +96,7 @@ void MainWindow::setsystemInfo_MainFrameStyling(void)
 
 void MainWindow::setnetworking_MainFrameContent(void)
 {
-    QFile file("resources/views/dashboard/html/template.html");
+    QFile file("resources/views/dashboard/html/networkDetails.html");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return ;
 
