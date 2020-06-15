@@ -62,16 +62,6 @@ margin-right: 20px;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QTextBrowser" name="usageInfo">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>10</y>
-         <width>711</width>
-         <height>221</height>
-        </rect>
-       </property>
-      </widget>
      </widget>
      <widget class="QFrame" name="systemInfo_MainFrame">
       <property name="geometry">
