@@ -13,13 +13,27 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
+    // Application attributes
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
-    w.setDefaultLook();
+    // The application class
+    QGuiApplication app(argc, argv);
 
-    w.show();
-    return a.exec();
+    // Use the QML engine
+    QQmlApplicationEngine engine;
+
+    const QUrl url(QStringLiteral("./resources/qrcFiles/main.qml"));
+
+    // Connceting a signal and slot - making sure the object and url match
+    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated, &app, [url](QObject * QObject, const QUrl &QObjectUrl) {
+        if ( !QObject && url == QObjectUrl )
+            QCoreApplication::exit(-1);
+    }, Qt::QueuedConnection);
+
+    // the engine loading the qml file
+    engine.load(url);
+
+    return app.exec();
 }
 
 /*

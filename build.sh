@@ -58,7 +58,7 @@ function google_test_output() {
     echo "---------" &>> ./logs/build.log
     echo "[GOOGLE TEST] Google Test output below ... " &>> ./logs/build.log
     echo "---------" &>> ./logs/build.log
-    ./bulid/bin/ExampleText &>> ./logs/build.log
+    ./bulid/bin/ExampleTest &>> ./logs/build.log
 }
 
 # MAIN functionality starts here
