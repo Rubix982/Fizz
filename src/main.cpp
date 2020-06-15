@@ -1,10 +1,9 @@
 // local header files
-#include "../include/mainwindow.h"
-#include "../include/dashboard/systemInfo.h"
+#include "mainwindow.h"
 
-// CXX standard header files
-#include <stdio.h>
-#include <memory>
+// Integrating Qt Widgets with QML, see ref below
+#include <QGuiApplication>
+#include <QQmlApplicationEngine>
 
 // QT header files
 #include <QApplication>
@@ -19,8 +18,11 @@ int main(int argc, char *argv[])
 
     w.setDefaultLook();
 
-    systemInfo data;
-
     w.show();
     return a.exec();
 }
+
+/*
+    * References
+    * Integrating QML with QT Widgets, https://www.youtube.com/watch?v=rK6BBW-xdUw
+*/

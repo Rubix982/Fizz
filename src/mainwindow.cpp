@@ -13,9 +13,6 @@ MainWindow::MainWindow(QWidget *parent)
 void MainWindow::setDefaultLook(void)
 {
 
-    ui->networkDetails->setPlainText(QString("saif here - network"));
-    ui->systemInfo->setPlainText(QString("saif here - systeminfo"));
-
     setDashboardContent();
     setDashboardStyling();
 
@@ -46,6 +43,19 @@ void MainWindow::setDashboardContent(void)
 void MainWindow::setDashboardStyling(void)
 {
 
+    QFile file("resources/views/dashboard/css/dashboard.min.css");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return ;
+
+    QString cssContent = "";
+
+    while (!file.atEnd()) {
+        QByteArray line = file.readLine();
+        cssContent += line;
+    }
+
+    ui->dashboard->setStyleSheet(cssContent);
+
     setusage_MainFrameStyling();
     setsystemInfo_MainFrameStyling();
     setnetworking_MainFrameStyling();
@@ -54,18 +64,21 @@ void MainWindow::setDashboardStyling(void)
 
 void MainWindow::setusage_MainFrameContent(void)
 {
-    QFile file("resources/views/dashboard/html/usageInfo.html");
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-        return ;
 
-    QString htmlText = "";
+    /* <! ---------------- Not rendering any HTML right now -------> */
+    // QFile file("resources/views/dashboard/html/usageInfo.html");
+    // if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    //     return ;
 
-    while (!file.atEnd()) {
-        QByteArray line = file.readLine();
-        htmlText += line;
-    }
+    // QString htmlText = "";
 
-    ui->usageInfo->setHtml(htmlText);
+    // while (!file.atEnd()) {
+    //     QByteArray line = file.readLine();
+    //     htmlText += line;
+    // }
+
+    // ui->usageInfo->setHtml(htmlText);
+    /* <! ---------------- Not rendering any HTML right now -------> */
 }
 
 void MainWindow::setusage_MainFrameStyling(void)
@@ -96,18 +109,37 @@ void MainWindow::setsystemInfo_MainFrameStyling(void)
 
 void MainWindow::setnetworking_MainFrameContent(void)
 {
-    QFile file("resources/views/dashboard/html/networkDetails.html");
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+
+    // For the download
+    QFile fileDownload("resources/views/dashboard/html/networkDownload.html");
+    if (!fileDownload.open(QIODevice::ReadOnly | QIODevice::Text))
         return ;
 
     QString htmlText = "";
 
-    while (!file.atEnd()) {
-        QByteArray line = file.readLine();
+    while (!fileDownload.atEnd()) {
+        QByteArray line = fileDownload.readLine();
         htmlText += line;
     }
 
-    ui->networkDetails->setHtml(htmlText);
+    ui->downloadDetails->setHtml(htmlText);
+    ui->downloadDetails->setStyleSheet("background-color: #212F3C;");
+
+    // For the upload section
+    QFile fileUpload("resources/views/dashboard/html/networkUpload.html");
+    if (!fileUpload.open(QIODevice::ReadOnly | QIODevice::Text))
+        return ;
+
+    htmlText = "";
+
+    while (!fileUpload.atEnd()) {
+        QByteArray line = fileUpload.readLine();
+        htmlText += line;
+    }
+
+    ui->uploadDetails->setHtml(htmlText);
+    ui->uploadDetails->setStyleSheet("background-color: #212F3C;");
+
 }
 
 void MainWindow::setnetworking_MainFrameStyling(void)

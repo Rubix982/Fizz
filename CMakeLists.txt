@@ -12,7 +12,7 @@
 #endif()
 
 # @param CMake version -- REQUIRED
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 2.8.11)
 
 # @param Should be the project name
 set(PROJECT_NAME Fizz)
@@ -32,6 +32,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
 set(CMAKE_CXX_EXTENSIONS YES)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 add_definitions(-DQT_DEPRECATED_WARNINGS)
 
 # For testing related configurations
@@ -63,8 +66,12 @@ include_directories(${INCLUDE_DIR})
 include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/cxxbasics/CXXBasics.cmake")
 
 # Use Qt5 resources
+# qt5_add_resources(QRC
+#     resources/qrcFiles/qml.qrc
+# )
+
 set(RESOURCES
-    ./resources/qrcFiles/style.qrc
+    resources/qrcFiles/qml.qrc
 )
 
 # Use QT5 ui
@@ -80,6 +87,8 @@ set(SOURCES
         ${SRC_DIR}/dashboard/networks.cpp
         ${SRC_DIR}/dashboard/usage.cpp
         ${SRC_DIR}/dashboard/systemInfo.cpp
+
+        resources/qrcFiles/main.qml
 )
 
 # Adding the headers
@@ -145,8 +154,9 @@ endif()
 
 ################## END For CLANG FORMAT ##################
 
-# Find QT5
-find_package(Qt5 COMPONENTS Core Widgets LinguistTools OpenGL REQUIRED)
+# Find QT5, QML
+find_package(Qt5 COMPONENTS Gui Qml Quick Core Network Widgets LinguistTools OpenGL QuickCompiler REQUIRED)
+
 # Add Qt5 definitions and includes to build libraries.
 # Widgets add Widgets Core and Gui
 add_definitions(${Qt5Widgets_DEFINITIONS})
@@ -165,16 +175,26 @@ message(STATUS "HEADERS detected: ${HEADERS}")
 message(STATUS "TS_FILES detected: ${TS_FILES_ALL}")
 
 if(ANDROID)
-    add_library(${PROJECT_NAME} ${UI} ${RESOURCES} ${SOURCES} ${HEADERS}  ${TS_FILES_ALL} )
+add_library(${PROJECT_NAME} ${UI} ${RESOURCES} ${SOURCES} ${HEADERS} ${TS_FILES_ALL} ${QRC} )
 else()
-    add_executable(${PROJECT_NAME} ${UI} ${RESOURCES} ${SOURCES} ${HEADERS}  ${TS_FILES_ALL} )
+add_executable(${PROJECT_NAME} ${UI} ${RESOURCES} ${SOURCES} ${HEADERS} ${TS_FILES_ALL} ${QRC})
 endif()
 
 add_subdirectory(test)
 
-## QT related additions
-target_link_libraries(${PROJECT_NAME} PRIVATE ${Qt5Widgets_LIBRARIES} Qt5::Widgets)
+set_target_properties(${PROJECT_NAME} PROPERTIES
+   RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/$<CONFIG>/plugins/${QmlPluginName}/)
+
+   ## QT related additions
+target_link_libraries(${PROJECT_NAME} PRIVATE ${Qt5Widgets_LIBRARIES} Qt5::Widgets Qt5::Quick Qt5::Qml Qt5::Core Qt5::Network Qt5::Gui)
 qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
+
+# message("Copying required Qt libraries and binaries to output directory ... ")
+# add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_PREFIX_PATH}\\bin $<TARGET_FILE_DIR:${PROJECT_NAME}>)
+
+# add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_PREFIX_PATH}\\plugins $<TARGET_FILE_DIR:${PROJECT_NAME}>)
+
+# add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_PREFIX_PATH}\\qml $<TARGET_FILE_DIR:${PROJECT_NAME}>)
 
 ############
 

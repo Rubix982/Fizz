@@ -27,7 +27,7 @@ function run_build() {
     echo "---------" &>> ./logs/build.log
     echo "[RUN + VALGRIND] Running executable ... " &>> ./logs/build.log
     echo "---------" &>> ./logs/build.log
-    valgrind --tool=memcheck --leak-check=yes build/Fizz &>> ./logs/build.log
+    valgrind --tool=memcheck --leak-check=yes ./build/bin/Debug/plugins/Fizz &>> ./logs/build.log
 }
 
 function test_build() {
@@ -53,6 +53,14 @@ function generate_docs() {
     doxygen docs/Doxyfile &>> ./logs/build.log
 }
 
+function google_test_output() {
+    echo "" &>> ./logs/build.log
+    echo "---------" &>> ./logs/build.log
+    echo "[GOOGLE TEST] Google Test output below ... " &>> ./logs/build.log
+    echo "---------" &>> ./logs/build.log
+    ./bulid/bin/ExampleText &>> ./logs/build.log
+}
+
 # MAIN functionality starts here
 
 number_of_arguments=$#
@@ -74,6 +82,7 @@ then
     test_build # Run the tests
     generate_docs # generate the relevant documentation
     cppcheck_build # run cpp check over the files
+    google_test_output # output the result of google tests
     run_build # Run the executable with valgrind
 
 elif [ "$1" = "clean" ]
