@@ -1,8 +1,10 @@
 #include "systemInfoClasses.hpp"
+#include "helperFuncs.hpp"
 #include <iostream>
 #include <string>
 #include <regex>
 #include <vector>
+#include <fstream>
 
 hardwareInfo::hardwareInfo() : cpuCores(0), cpuSpeed(0.0f) {}
 
@@ -33,13 +35,32 @@ void hardwareInfo::setCPUSeed(float &const cpuSpeed) { this->cpuSpeed = cpuSpeed
 //! default information
 void hardwareInfo::setDefaultValues(void) {
 
-    this->resolveHostname();
-    this->resolveDistribution();
-    this->resolvePlatform();
-    this->resolveCPUModel();
-    this->resolveReleaseType();
-    this->resolveCPUCores();
-    this->resolveCPUSpeed();
+  std::ofstream __Outfile("lscpu.log");
+
+  FILE *fp;
+  char path[1035];
+
+  /* Open the command for reading. */
+  fp = popen("/bin/lscpu", "r");
+  if (fp == NULL) {
+    printf("[ HARDWARD_INFO.CPP ] Failed to run command lscpu ... \n" );
+    exit(1);
+  }
+
+  /* Read the output a line at a time - output it. */
+  while (fgets(path, sizeof(path), fp) != NULL)
+    __Outfile << path;
+
+  /* close */
+  pclose(fp);
+
+  this->resolveHostname();
+  this->resolveDistribution();
+  this->resolvePlatform();
+  this->resolveCPUModel();
+  this->resolveReleaseType();
+  this->resolveCPUCores();
+  this->resolveCPUSpeed();
 
 }
 
@@ -82,8 +103,8 @@ void hardwareInfo::resolveDistribution(void) {
 }
 
 void hardwareInfo::resolvePlatform(void) {
-  std::string commandBuffer = "hostname";
-  this->setPlatform(getBashOutput(commandBuffer));
+  std::string platform = getBashOutput("uname -s") + " " + getBashOutput("uname -m");
+  this->setPlatform(platform);
   return ;
 }
 
@@ -101,95 +122,14 @@ void hardwareInfo::resolveReleaseType(void) {
 
 void hardwareInfo::resolveCPUCores(void) {
   std::string commandBuffer = "hostname";
-  this->setCPUcores(getBashOutput(commandBuffer));
+  int temp = getBashOutputInt(commandBuffer);
+  // this->setCPUcores(getBashOutput(commandBuffer));
   return ;
 }
 
 void hardwareInfo::resolveCPUSpeed(void) {
   std::string commandBuffer = "hostname";
-  this->setCPUSeed(getBashOutput(commandBuffer));
+  float temp = getBashOutputFloat(commandBuffer);
+  // this->setCPUSeed(getBashOutput(commandBuffer));
   return ;
-}
-
-template <typename T>
-std::string& getBashOutput(std::string & const command) {
-
-  FILE *fp;
-  char path[1035];
-
-  /* Open the command for reading. */
-  fp = popen(command.c_str(), "r");
-  if (fp == NULL) {
-    printf("[ KERNEL_INFO.CPP ] Failed to run command with the command %c ... \n", command.c_str() );
-    std::string empty = "";
-    return empty;
-  }
-
-  std::string holdBashOutput{""};
-
-  /* Read the output a line at a time - output it. */
-  while (fgets(path, sizeof(path), fp) != NULL) {
-    holdBashOutput += path;
-  }
-
-  /* close */
-  pclose(fp);
-
-  return holdBashOutput;
-}
-
-// the int implementation
-template <>
-std::string& getBashOutput<int>(std::string & const command) {
-
-  FILE *fp;
-  char path[1035];
-
-  /* Open the command for reading. */
-  fp = popen(command.c_str(), "r");
-  if (fp == NULL) {
-    printf("[ KERNEL_INFO.CPP ] Failed to run command with the command %c ... \n", command.c_str() );
-    std::string empty = "";
-    return empty;
-  }
-
-  std::string holdBashOutput{""};
-
-  /* Read the output a line at a time - output it. */
-  while (fgets(path, sizeof(path), fp) != NULL) {
-    holdBashOutput += path;
-  }
-
-  /* close */
-  pclose(fp);
-
-  return holdBashOutput;
-}
-
-// The float implementation
-template <>
-std::string& getBashOutput<float>(std::string & const command) {
-
-  FILE *fp;
-  char path[1035];
-
-  /* Open the command for reading. */
-  fp = popen(command.c_str(), "r");
-  if (fp == NULL) {
-    printf("[ KERNEL_INFO.CPP ] Failed to run command with the command %c ... \n", command.c_str() );
-    std::string empty = "";
-    return empty;
-  }
-
-  std::string holdBashOutput{""};
-
-  /* Read the output a line at a time - output it. */
-  while (fgets(path, sizeof(path), fp) != NULL) {
-    holdBashOutput += path;
-  }
-
-  /* close */
-  pclose(fp);
-
-  return holdBashOutput;
 }

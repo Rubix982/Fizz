@@ -2,6 +2,9 @@
 #define __SYSTEM_INFO_CLASSES
 
 #include <string>
+#include <iostream>
+#include <cstring>
+#include <cstdlib>
 
 class hardwareInfo {
   // Contains the stacer and hardware info

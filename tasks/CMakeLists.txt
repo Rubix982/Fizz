@@ -13,11 +13,15 @@ endif()
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 set(HEADERS
+    classes/helpFuncs.hpp
+    classes/systemInfoClass.hpp
     dashboard/include/networks.hpp
 )
 
 set(SOURCES
     testing.cpp
+    classes/hardwareInfo.cpp
+    classes/kernelInfo.cpp
     dashboard/src/systemInfo.cpp
 )
 
