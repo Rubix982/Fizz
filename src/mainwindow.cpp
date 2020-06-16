@@ -2,12 +2,15 @@
 #include "../include/ui_mainwindow.h"
 
 #include <iostream>
+#include <QQmlContext>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    // ui->quickWidget->rootContext()->setContextProperty("MainWindow", this);
+    // ui->quickWidget->setSource(QUrl(QStringLiteral("./resources/qrcFiles/main.qml")));
 }
 
 void MainWindow::setDefaultLook(void)

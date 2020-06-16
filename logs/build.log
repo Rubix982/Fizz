@@ -41,6 +41,14 @@ Not searching for unused variables given on the command line.
 -- SOURCES detected: src/main.cpp;src/mainwindow.cpp;src/dashboard/networks.cpp;src/dashboard/usage.cpp;src/dashboard/systemInfo.cpp;resources/qrcFiles/main.qml
 -- HEADERS detected: include/mainwindow.h;include/ui_mainwindow.h;include/moc_predefs.h;include/dashboard/networks.h;include/dashboard/usage.h;include/dashboard/systemInfo.h
 -- TS_FILES detected: ts_files/testing_with_cmake_en_001.ts
+CMake Warning (dev) at /usr/lib64/cmake/Qt5Core/Qt5CoreMacros.cmake:44 (message):
+  qt5_use_modules is not part of the official API, and might be removed in Qt
+  6.
+Call Stack (most recent call first):
+  /usr/lib64/cmake/Qt5Core/Qt5CoreMacros.cmake:431 (_qt5_warn_deprecated)
+  CMakeLists.txt:194 (qt5_use_modules)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/saif/Desktop/Folders/University/OS/Project/build
@@ -52,17 +60,17 @@ Not searching for unused variables given on the command line.
 [2/30] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/gtest_autogen/mocs_compilation.cpp.o
 [3/30] Automatic MOC and UIC for target Fizz
 [4/30] Automatic RCC for resources/qrcFiles/qml.qrc
-[5/30] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/usage.cpp.o
+[5/30] Building CXX object CMakeFiles/Fizz.dir/Fizz_autogen/mocs_compilation.cpp.o
 [6/30] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/networks.cpp.o
 [7/30] Building CXX object CMakeFiles/Fizz.dir/Fizz_autogen/HBIHOLR4PS/qrc_qml.cpp.o
-[8/30] Building CXX object CMakeFiles/Fizz.dir/Fizz_autogen/mocs_compilation.cpp.o
-[9/30] Building CXX object CMakeFiles/Fizz.dir/src/mainwindow.cpp.o
+[8/30] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/usage.cpp.o
+[9/30] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/systemInfo.cpp.o
+[10/30] Building CXX object CMakeFiles/Fizz.dir/src/main.cpp.o
+[11/30] Building CXX object CMakeFiles/Fizz.dir/src/mainwindow.cpp.o
 ../src/mainwindow.cpp: In member function ‘void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint&)’:
-../src/mainwindow.cpp:213:76: warning: unused parameter ‘pos’ [-Wunused-parameter]
-  213 | void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint &pos)
+../src/mainwindow.cpp:216:76: warning: unused parameter ‘pos’ [-Wunused-parameter]
+  216 | void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint &pos)
       |                                                              ~~~~~~~~~~~~~~^~~
-[10/30] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/systemInfo.cpp.o
-[11/30] Building CXX object CMakeFiles/Fizz.dir/src/main.cpp.o
 [12/30] Linking CXX executable bin/Debug/plugins/Fizz
 [13/30] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
 [14/30] Linking CXX static library lib/libgtestd.a
@@ -111,26 +119,26 @@ warning: Tag 'TCL_SUBST' at line 270 of file 'docs/Doxyfile' has become obsolete
 /home/saif/Desktop/Folders/University/OS/Project/src/dashboard/systemInfo.cpp:228: warning: documented symbol 'std::string systemInfo::getDataFromBuffer' was not declared or defined.
 /home/saif/Desktop/Folders/University/OS/Project/src/dashboard/systemInfo.cpp:230: warning: documented symbol 'systemInfo::~systemInfo' was not declared or defined.
 /home/saif/Desktop/Folders/University/OS/Project/src/dashboard/usage.cpp:4: warning: documented symbol 'void usage::testing_public' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:6: warning: documented symbol 'MainWindow::MainWindow' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:13: warning: documented symbol 'void MainWindow::setDefaultLook' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:34: warning: documented symbol 'void MainWindow::setDashboardContent' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:43: warning: documented symbol 'void MainWindow::setDashboardStyling' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:65: warning: documented symbol 'void MainWindow::setusage_MainFrameContent' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:84: warning: documented symbol 'void MainWindow::setusage_MainFrameStyling' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:89: warning: documented symbol 'void MainWindow::setsystemInfo_MainFrameContent' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:105: warning: documented symbol 'void MainWindow::setsystemInfo_MainFrameStyling' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:110: warning: documented symbol 'void MainWindow::setnetworking_MainFrameContent' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:145: warning: documented symbol 'void MainWindow::setnetworking_MainFrameStyling' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:154: warning: documented symbol 'void MainWindow::setServicesContent' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:159: warning: documented symbol 'void MainWindow::setServicesStyling' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:168: warning: documented symbol 'void MainWindow::setProcessesContent' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:173: warning: documented symbol 'void MainWindow::setProcessesStyling' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:182: warning: documented symbol 'void MainWindow::setGraphsContent' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:187: warning: documented symbol 'void MainWindow::setGraphsStyling' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:196: warning: documented symbol 'void MainWindow::setPackageContent' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:201: warning: documented symbol 'void MainWindow::setPackageStyling' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:207: warning: documented symbol 'MainWindow::~MainWindow' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:213: warning: documented symbol 'void MainWindow::on_centralwidget_customContextMenuRequested' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:7: warning: documented symbol 'MainWindow::MainWindow' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:16: warning: documented symbol 'void MainWindow::setDefaultLook' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:37: warning: documented symbol 'void MainWindow::setDashboardContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:46: warning: documented symbol 'void MainWindow::setDashboardStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:68: warning: documented symbol 'void MainWindow::setusage_MainFrameContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:87: warning: documented symbol 'void MainWindow::setusage_MainFrameStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:92: warning: documented symbol 'void MainWindow::setsystemInfo_MainFrameContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:108: warning: documented symbol 'void MainWindow::setsystemInfo_MainFrameStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:113: warning: documented symbol 'void MainWindow::setnetworking_MainFrameContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:148: warning: documented symbol 'void MainWindow::setnetworking_MainFrameStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:157: warning: documented symbol 'void MainWindow::setServicesContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:162: warning: documented symbol 'void MainWindow::setServicesStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:171: warning: documented symbol 'void MainWindow::setProcessesContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:176: warning: documented symbol 'void MainWindow::setProcessesStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:185: warning: documented symbol 'void MainWindow::setGraphsContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:190: warning: documented symbol 'void MainWindow::setGraphsStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:199: warning: documented symbol 'void MainWindow::setPackageContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:204: warning: documented symbol 'void MainWindow::setPackageStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:210: warning: documented symbol 'MainWindow::~MainWindow' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/mainwindow.cpp:216: warning: documented symbol 'void MainWindow::on_centralwidget_customContextMenuRequested' was not declared or defined.
 /home/saif/Desktop/Folders/University/OS/Project/src/moc_mainwindow.cpp:58: warning: documented symbol 'void MainWindow::qt_static_metacall' was not declared or defined.
 /home/saif/Desktop/Folders/University/OS/Project/src/moc_mainwindow.cpp:66: warning: documented symbol 'QT_INIT_METAOBJECT const QMetaObject MainWindow::staticMetaObject' was not declared or defined.
 /home/saif/Desktop/Folders/University/OS/Project/src/moc_mainwindow.cpp:76: warning: documented symbol 'const QMetaObject * MainWindow::metaObject' was not declared or defined.
@@ -255,15 +263,15 @@ Checking misc/native_cpuid.cpp ...
 Checking src/dashboard/networks.cpp ...
 2/13 files checked 1% done
 Checking src/dashboard/systemInfo.cpp ...
-3/13 files checked 38% done
+3/13 files checked 37% done
 Checking src/dashboard/usage.cpp ...
-4/13 files checked 39% done
+4/13 files checked 38% done
 Checking src/main.cpp ...
 5/13 files checked 46% done
 Checking src/mainwindow.cpp ...
 6/13 files checked 73% done
 Checking src/moc_mainwindow.cpp ...
-7/13 files checked 89% done
+7/13 files checked 90% done
 Checking tasks/dashboard/src/dashboard.cpp ...
 8/13 files checked 99% done
 Checking tasks/packages/src/packages.cpp ...
@@ -285,27 +293,30 @@ Checking test/src/ExampleTest.cpp ...
 ---------
 [RUN + VALGRIND] Running executable ... 
 ---------
-==57054== Memcheck, a memory error detector
-==57054== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==57054== Using Valgrind-3.16.0.GIT and LibVEX; rerun with -h for copyright info
-==57054== Command: ./build/bin/Debug/plugins/Fizz
-==57054== 
+==84263== Memcheck, a memory error detector
+==84263== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==84263== Using Valgrind-3.16.0.GIT and LibVEX; rerun with -h for copyright info
+==84263== Command: ./build/bin/Debug/plugins/Fizz
+==84263== 
 Icon theme "ubuntu-mono-dark" not found.
 Icon theme "Mint-X" not found.
 Icon theme "elementary" not found.
-==57054== 
-==57054== HEAP SUMMARY:
-==57054==     in use at exit: 412,568 bytes in 7,527 blocks
-==57054==   total heap usage: 120,206 allocs, 112,679 frees, 63,281,946 bytes allocated
-==57054== 
-==57054== LEAK SUMMARY:
-==57054==    definitely lost: 0 bytes in 0 blocks
-==57054==    indirectly lost: 0 bytes in 0 blocks
-==57054==      possibly lost: 0 bytes in 0 blocks
-==57054==    still reachable: 412,568 bytes in 7,527 blocks
-==57054==         suppressed: 0 bytes in 0 blocks
-==57054== Reachable blocks (those to which a pointer was found) are not shown.
-==57054== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==57054== 
-==57054== For lists of detected and suppressed errors, rerun with: -s
-==57054== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==84263== 
+==84263== HEAP SUMMARY:
+==84263==     in use at exit: 417,571 bytes in 7,531 blocks
+==84263==   total heap usage: 167,659 allocs, 160,128 frees, 142,838,588 bytes allocated
+==84263== 
+==84263== LEAK SUMMARY:
+==84263==    definitely lost: 0 bytes in 0 blocks
+==84263==    indirectly lost: 0 bytes in 0 blocks
+==84263==      possibly lost: 0 bytes in 0 blocks
+==84263==    still reachable: 415,855 bytes in 7,529 blocks
+==84263==         suppressed: 1,716 bytes in 2 blocks
+==84263== Reachable blocks (those to which a pointer was found) are not shown.
+==84263== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==84263== 
+==84263== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+--84263-- 
+--84263-- used_suppression:      2 dtv-addr-tail /usr/lib/valgrind/default.supp:1444 suppressed: 1,716 bytes in 2 blocks
+==84263== 
+==84263== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

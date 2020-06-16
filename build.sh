@@ -27,7 +27,7 @@ function run_build() {
     echo "---------" &>> ./logs/build.log
     echo "[RUN + VALGRIND] Running executable ... " &>> ./logs/build.log
     echo "---------" &>> ./logs/build.log
-    valgrind --tool=memcheck --leak-check=yes ./build/bin/Debug/plugins/Fizz &>> ./logs/build.log
+    valgrind --tool=memcheck --leak-check=yes -s ./build/bin/Debug/plugins/Fizz &>> ./logs/build.log
 }
 
 function test_build() {

@@ -14,6 +14,14 @@
 # @param CMake version -- REQUIRED
 cmake_minimum_required(VERSION 2.8.11)
 
+if(POLICY CMP0023)
+  cmake_policy(SET CMP0023 NEW)
+endif()
+
+if (POLICY CMP0028)
+    cmake_policy(SET CMP0028 NEW)
+endif()
+
 # @param Should be the project name
 set(PROJECT_NAME Fizz)
 
@@ -155,7 +163,7 @@ endif()
 ################## END For CLANG FORMAT ##################
 
 # Find QT5, QML
-find_package(Qt5 COMPONENTS Gui Qml Quick Core Network Widgets LinguistTools OpenGL QuickCompiler REQUIRED)
+find_package(Qt5 COMPONENTS QuickWidgets Gui Qml Quick Core Network Widgets LinguistTools OpenGL QuickCompiler REQUIRED)
 
 # Add Qt5 definitions and includes to build libraries.
 # Widgets add Widgets Core and Gui
@@ -182,11 +190,14 @@ endif()
 
 add_subdirectory(test)
 
+# For qt5 / QML
+qt5_use_modules(${PROJECT_NAME} QuickWidgets Quick Core Network Widgets LinguistTools OpenGL QuickCompiler Gui Qml)
+
 set_target_properties(${PROJECT_NAME} PROPERTIES
    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/$<CONFIG>/plugins/${QmlPluginName}/)
 
-   ## QT related additions
-target_link_libraries(${PROJECT_NAME} PRIVATE ${Qt5Widgets_LIBRARIES} Qt5::Widgets Qt5::Quick Qt5::Qml Qt5::Core Qt5::Network Qt5::Gui)
+## QT related additions
+target_link_libraries(${PROJECT_NAME} ${Qt5Widgets_LIBRARIES} Qt5::Widgets Qt5::Quick Qt5::Qml Qt5::Core Qt5::Network Qt5::Gui Qt5::QuickWidgets  Qt5::OpenGL)
 qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 
 # message("Copying required Qt libraries and binaries to output directory ... ")

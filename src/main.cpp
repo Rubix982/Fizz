@@ -5,34 +5,48 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
+#include <QQuickWindow>
+#include <QQuickView>
+#include <QQuickTransform>
+
 // QT header files
 #include <QApplication>
 #include <QPushButton>
 #include <QTableView>
-#include <QDebug>
+#include <QQuickWidget>
 
 int main(int argc, char *argv[])
 {
-    // Application attributes
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
-    // The application class
-    QGuiApplication app(argc, argv);
+    /*  FOR DEBUGGING WITH QML */
+    // // Application attributes
+    // QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
-    // Use the QML engine
-    QQmlApplicationEngine engine;
+    // // The application class
+    // QGuiApplication app(argc, argv);
 
-    const QUrl url(QStringLiteral("./resources/qrcFiles/main.qml"));
+    // // Use the QML engine
+    // QQmlApplicationEngine engine;
 
-    // Connceting a signal and slot - making sure the object and url match
-    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated, &app, [url](QObject * QObject, const QUrl &QObjectUrl) {
-        if ( !QObject && url == QObjectUrl )
-            QCoreApplication::exit(-1);
-    }, Qt::QueuedConnection);
+    // const QUrl url(QStringLiteral("./resources/qrcFiles/main.qml"));
 
-    // the engine loading the qml file
-    engine.load(url);
+    // // Connceting a signal and slot - making sure the object and url match
+    // QObject::connect(&engine, &QQmlApplicationEngine::objectCreated, &app, [url](QObject * QObject, const QUrl &QObjectUrl) {
+    //     if ( !QObject && url == QObjectUrl )
+    //         QCoreApplication::exit(-1);
+    // }, Qt::QueuedConnection);
 
+    // // the engine loading the qml file
+    // engine.load(url);
+    /*  FOR DEBUGGING WITH QML */
+
+
+    QApplication app(argc, argv);
+    MainWindow MainWindow;
+
+    MainWindow.setDefaultLook();
+
+    MainWindow.show();
     return app.exec();
 }
 
