@@ -111,9 +111,9 @@ set(HEADERS
         ${INCLUDE_DIR}/ui_mainwindow.h
         ${INCLUDE_DIR}/moc_predefs.h
 
-        ${INCLUDE_DIR}/dashboard/networks.h
-        ${INCLUDE_DIR}/dashboard/usage.h
-        ${INCLUDE_DIR}/dashboard/systemInfo.h
+        ${INCLUDE_DIR}/dashboard/networks.hpp
+        ${INCLUDE_DIR}/dashboard/usage.hpp
+        ${INCLUDE_DIR}/dashboard/systemInfo.hpp
 )
 
 # Adding the TS files

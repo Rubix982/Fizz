@@ -1,4 +1,4 @@
-#include "../../include/dashboard/systemInfo.hpp"
+#include "../../include/dashboard/systemInfo.h"
 #include <cholmod_config.h>
 #include <errno.h>
 #include <regex>

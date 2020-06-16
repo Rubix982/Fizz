@@ -1,13 +1,10 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"files.associations": {
-			"qwidget": "cpp",
-			"qqmlcontext": "cpp"
-		}
-	}
+    "folders": [
+        {
+            "path": "tasks"
+        },
+        {
+            "path": "."
+        }
+    ]
 }

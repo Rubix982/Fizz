@@ -158,15 +158,30 @@ p, li { white-space: pre-wrap; }
      <widget class="QWidget" name="widget" native="true">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>717</width>
-        <height>233</height>
+        <x>0</x>
+        <y>-8</y>
+        <width>741</width>
+        <height>251</height>
        </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="sizeIncrement">
+       <size>
+        <width>50</width>
+        <height>50</height>
+       </size>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QQuickWidget" name="CPU">
+         <property name="styleSheet">
+          <string notr="true">margin: auto;</string>
+         </property>
          <property name="resizeMode">
           <enum>QQuickWidget::SizeRootObjectToView</enum>
          </property>
@@ -174,6 +189,9 @@ p, li { white-space: pre-wrap; }
        </item>
        <item>
         <widget class="QQuickWidget" name="Memory">
+         <property name="styleSheet">
+          <string notr="true">margin: auto;</string>
+         </property>
          <property name="resizeMode">
           <enum>QQuickWidget::SizeRootObjectToView</enum>
          </property>
@@ -181,6 +199,9 @@ p, li { white-space: pre-wrap; }
        </item>
        <item>
         <widget class="QQuickWidget" name="Disk">
+         <property name="styleSheet">
+          <string notr="true">margin: auto;</string>
+         </property>
          <property name="resizeMode">
           <enum>QQuickWidget::SizeRootObjectToView</enum>
          </property>

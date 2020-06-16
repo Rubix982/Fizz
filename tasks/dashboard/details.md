@@ -35,7 +35,7 @@
 
 ## CPU usage [Reference List]
 
-- See /sys/devices/system/cpu , 
+- See /sys/devices/system/cpu ,
 
 ## GPU usage
 
@@ -48,18 +48,18 @@
   - TCP vs UDP
   - Bandwidth
   - Network interface
-    - lo, ethos5, 
+    - lo, ethos5,
   - VPNs
   - Network bridges
   - IFB devices
-  - Bond interfaces 
+  - Bond interfaces
   - IP Traffic
   - Total IPv6 traffic
   - IP Packets ( `noRoutes`, `InNoRoutes`)
   - RST, Userclosed `TCPAbortOnClose`
   - Sockets
   - TCP, `baddata`, `userclosed`
-  - Broadcasts, 
+  - Broadcasts,
     - IP Broadcast bandwidth
     - IP Broadcast packets
   - Multicast
@@ -72,11 +72,11 @@
 ## Disk Usage
 
 - `systemd services`, `cpu`, `mem`, `swap`, `disk`
-- `cpu`, Systemd Services CPU utilization 
+- `cpu`, Systemd Services CPU utilization
 - `mem`, Systemd Services Used Memory Without Cache
 - `swap`, Systemd Services Swap Memory Used
 - `disk`, Systemd Services Throttle Disk Read Bandwidth (services.throttle_io_read)
-- 
+-
 
 ### References
 
