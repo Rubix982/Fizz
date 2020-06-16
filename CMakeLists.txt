@@ -90,7 +90,8 @@ set(UI
 # Adding sources
 set(SOURCES
         ${SRC_DIR}/${ENTRY_POINT}
-        ${SRC_DIR}/mainwindow.cpp
+
+        ${SRC_DIR}/backend/mainwindow.cpp
 
         ${SRC_DIR}/dashboard/networks.cpp
         ${SRC_DIR}/dashboard/usage.cpp

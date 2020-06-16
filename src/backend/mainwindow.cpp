@@ -1,5 +1,5 @@
-#include "../include/mainwindow.h"
-#include "../include/ui_mainwindow.h"
+#include "../../include/mainwindow.h"
+#include "../../include/ui_mainwindow.h"
 
 #include <iostream>
 #include <QQmlContext>
