@@ -155,13 +155,13 @@ p, li { white-space: pre-wrap; }
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="widget" native="true">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>10</y>
         <width>717</width>
-        <height>213</height>
+        <height>233</height>
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">

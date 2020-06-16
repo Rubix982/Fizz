@@ -93,14 +93,12 @@ then
     # build the project
     (time build) &>> ./logs/build.log
     echo "" &>> ./logs/build.log
-    echo "---------" &>> ./logs/build.log
     echo "[ TIME + BUILD ] Build time output above ... " &>> ./logs/build.log
     echo "---------------------------" &>> ./logs/build.log
 
     # Run the tests
     (time test_build) &>> ./logs/build.log
     echo "" &>> ./logs/build.log
-    echo "---------" &>> ./logs/build.log
     echo "[ TIME + TEST_BUILD ] Testing build time output above ... " &>> ./logs/build.log
     echo "---------------------------" &>> ./logs/build.log
 
@@ -108,21 +106,18 @@ then
     (time generate_docs) &>> ./logs/build.log
 
     echo "" &>> ./logs/build.log
-    echo "---------" &>> ./logs/build.log
     echo "[ TIME + GENERATE_DOCS ] Generating documentation time output above ... " &>> ./logs/build.log
     echo "---------------------------" &>> ./logs/build.log
 
     # run cpp check over the files
     (time cppcheck_build) &>> ./logs/build.log
     echo "" &>> ./logs/build.log
-    echo "---------" &>> ./logs/build.log
     echo "[ TIME + CPP_CHECK_BULD ] CPP_CHECK_BUILD time output above ... " &>> ./logs/build.log
     echo "---------------------------" &>> ./logs/build.log
 
     # output the result of google tests
     (time google_test_output) &>> ./logs/build.log
     echo "" &>> ./logs/build.log
-    echo "---------" &>> ./logs/build.log
     echo "[ TIME + GOOGLE_TEST_OUTPUT ] GOOGLE_TEST_OUTPUT time output above ... " &>> ./logs/build.log
     echo "---------------------------" &>> ./logs/build.log
 
@@ -130,7 +125,9 @@ then
     run_build
 
     # clean the main build
-    mv ./vgcore* ./logs
+    if [ -f ./vgcore* ]; then
+        mv ./vgcore* ./logs
+    fi
 
 elif [ "$1" = "clean" ]
 then

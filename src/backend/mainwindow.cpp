@@ -28,12 +28,15 @@ MainWindow::MainWindow(QWidget *parent)
 
     // ui->horizontalLayout->addWidget(container);
 
-    QQuickWidget * view = new QQuickWidget();
+    // QQuickWidget * view = new QQuickWidget();
     // view->setSource(QUrl::fromLocalFile("./resources/qrcFiles/main.qml"));
 
     // // view->show();
 
     // ui->horizontalLayout->addWidget(view);
+
+    ui->CPU->rootContext()->setContextProperty("widget", this);
+    ui->CPU->setSource(QUrl(QStringLiteral("./resources/qrcFiles/main.qml")));
 }
 
 void MainWindow::setDefaultLook(void)
@@ -238,5 +241,6 @@ MainWindow::~MainWindow()
 /*!< Misc */
 void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint &pos)
 {
+    std::cout << pos.x() << " " << pos.y();
     return ;
 }

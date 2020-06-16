@@ -197,7 +197,7 @@ endif()
 add_subdirectory(test)
 
 # For qt5 / QML
-qt5_use_modules(${PROJECT_NAME} QuickWidgets Quick Core Network Widgets LinguistTools OpenGL QuickCompiler Gui Qml)
+# qt5_use_modules(${PROJECT_NAME} QuickWidgets Quick Core Network Widgets LinguistTools OpenGL QuickCompiler Gui Qml)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/$<CONFIG>/plugins/${QmlPluginName}/)
