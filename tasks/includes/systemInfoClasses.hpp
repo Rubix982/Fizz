@@ -14,90 +14,87 @@ class hardwareInfo {
   int cpuCores;            // the number of cpu cores
   float cpuSpeed;          // the cpu speed
 
+  //! default information
+  void setDefaultValues(void);
+
+  //! resolution for the default values
+  void resolveHostname(void);
+  void resolveDistribution(void);
+  void resolvePlatform(void);
+  void resolveCPUModel(void);
+  void resolveReleaseType(void);
+  void resolveCPUCores(void);
+  void resolveCPUSpeed(void);
+
 public:
-  hardwareInfo() : cpuCores(0), cpuSpeed(0.0f) {}
 
-  // getters
-  std::string getHostname() const { return hostname; }
-  std::string getDistribution() const { return distribution; }
-  std::string getPlatform() const { return platform; }
-  std::string getCPUModel() const { return cpuModel; }
-  std::string getReleaseType() const { return releaseType; }
+  //! constructor
+  hardwareInfo();
 
-  int getCPUcores() const { return cpuCores; }
-  float getCPUSeed() const { return cpuSpeed; }
+  //! getters
+  std::string getHostname() const;
+  std::string getDistribution() const;
+  std::string getPlatform() const;
+  std::string getCPUModel() const;
+  std::string getReleaseType() const;
+  int getCPUcores() const;
+  float getCPUSeed() const;
 
-  // setters
-  void setHostname(std::string &const hostname) { this->hostname = hostname; }
-  void setDistribution(std::string &const distribution) {
-    this->distribution = distribution;
-  }
-  void setPlatform(std::string &const platform) { this->platform = platform; }
-  void setCPUModel(std::string &const cpuModel) { this->cpuModel = cpuModel; }
-  void setReleaseType(std::string &const releaseType) {
-    this->releaseType = releaseType;
-  }
-
-  void setCPUcores(int &const cpuCores) { this->cpuCores = cpuCores; }
-  void setCPUSeed(float &const cpuSpeed) { this->cpuSpeed = cpuSpeed; }
-
-  // default information
+  //! setters
+  void setHostname(std::string &const hostname);
+  void setDistribution(std::string &const distribution);
+  void setPlatform(std::string &const platform);
+  void setCPUModel(std::string &const cpuModel);
+  void setReleaseType(std::string &const releaseType);
+  void setCPUcores(int &const cpuCores);
+  void setCPUSeed(float &const cpuSpeed);
 };
 
 class kernelInfo {
 
   std::string kernelName;       //! kernel name
   std::string nodeName;         //! nodename
+  std::string kernelRelease;    //! Kernel release
   std::string kernelVersion;    //! kernel version
   std::string machine;          //! machine
   std::string processor;        //! processor
-  std::string hardwarePlatform; //! hardware platform
   std::string operatingSystem;  //! the operating system
 
+  //! default information
+  void setDefaultValues(void);
+
+  //! find resolutions for the default values
+  void resolveKernelName(void);
+  void resolveNodeName(void);
+  void resolveKernelRelease(void);
+  void resolveKernelVersion(void);
+  void resolveMachine(void);
+  void resolveProcessor(void);
+  void resolveOperatingSystem(void);
+
 public:
+  //! constructors
   kernelInfo() {}
 
   // getters
-  std::string getKernelName(void) const { return kernelName; }
+  std::string getKernelName(void) const;
+  std::string getNodename(void) const;
+  std::string getKernelRelease(void) const;
+  std::string getKernelVersion(void) const;
+  std::string getMachine(void) const;
+  std::string getProcessor(void) const;
+  std::string getOperatingSystem(void) const;
 
-  std::string getNodename(void) const { return nodeName; }
+  //! setters
+  void setKernelName(std::string &const kernelName);
+  void setNodename(std::string &const nodeName);
+  void setKernelRelease(std::string &const kernelRelease);
+  void setKernelVersion(std::string &const kernelVersion);
+  void setMachine(std::string &const machine);
+  void setProcessor(std::string &const processor);
+  void setOperatingSystem(std::string &const operatingSystem);
 
-  std::string getKernelVersion(void) const { return kernelVersion; }
-
-  std::string getMachine(void) const { return machine; }
-
-  std::string getProcessor(void) const { return processor; }
-
-  std::string getHardwarePlatform(void) const { return hardwarePlatform; }
-
-  std::string getOperatingSystem(void) const { return operatingSystem; }
-
-  // setters
-  void setKernelName(std::string &const kernelName) {
-    this->kernelName = kernelName;
-  }
-
-  void setNodename(std::string &const nodeName) { this->nodeName = nodeName; }
-
-  void setKernelVersion(std::string &const kernelVersion) {
-    this->kernelVersion = kernelVersion;
-  }
-
-  void setMachine(std::string &const machine) { this->machine = machine; }
-
-  void setProcessor(std::string &const processor) {
-    this->processor = processor;
-  }
-
-  void setHardwarePlatform(std::string &const hardwarePlatform) {
-    this->hardwarePlatform = hardwarePlatform;
-  }
-
-  void setOperatingSystem(std::string &const operatingSystem) {
-    this->operatingSystem = operatingSystem;
-  }
-
-  // default information
+  //! default information
 };
 
 #endif
