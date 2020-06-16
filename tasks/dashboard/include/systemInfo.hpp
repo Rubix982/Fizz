@@ -1,7 +1,6 @@
 #ifndef SYSTEM_INFO_H
 #define SYSTEM_INFO_H
 
-#include <QString>
 #include <string>
 #include <cpuid.h>
 
@@ -55,10 +54,10 @@ class systemInfo
 
 
         /*!< Attributes */
-    
+
         //! the system hostname
-        std::string hostName;    
-        
+        std::string hostName;
+
         //!  the platform / architecture
         std::string platform;
 
@@ -67,7 +66,7 @@ class systemInfo
 
         //! kernel info
         kernelInfo kernel_info;
-        
+
         //! the cpu model
         std::string cpuModel;
 

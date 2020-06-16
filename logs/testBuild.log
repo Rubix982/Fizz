@@ -1,0 +1,26 @@
+-- The C compiler identification is GNU 10.1.0
+-- The CXX compiler identification is GNU 10.1.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc - works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/saif/Desktop/Folders/University/OS/Project/tasks/build
+Scanning dependencies of target dashboard_autogen
+[ 20%] Automatic MOC and UIC for target dashboard
+[ 20%] Built target dashboard_autogen
+Scanning dependencies of target dashboard
+[ 40%] Building CXX object CMakeFiles/dashboard.dir/dashboard_autogen/mocs_compilation.cpp.o
+[ 60%] Building CXX object CMakeFiles/dashboard.dir/testing.cpp.o
+[ 80%] Building CXX object CMakeFiles/dashboard.dir/dashboard/src/systemInfo.cpp.o
+[100%] Linking CXX executable dashboard
+[100%] Built target dashboard
