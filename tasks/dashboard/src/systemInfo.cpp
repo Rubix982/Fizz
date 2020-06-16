@@ -1,3 +1,4 @@
+#include "../../includes/systemInfoClasses.hpp"
 #include "../include/systemInfo.hpp"
 #include <cholmod_config.h>
 #include <errno.h>
@@ -13,35 +14,9 @@
 systemInfo::systemInfo(void) {
   printf("[SYSTEM_INFO.CPP] Hello, World!\n");
 
-  resolveHostName();
-  resolvePlatform();
-  resolveDistribution();
-  resolveKernelInfo();
-  resolveCPUModel();
-  resolveCPUCores();
-  resolveCPUSpeed();
+  kernelInfoData = new kernelInfo();
+  hardwareInfoData = new hardwareInfo();
 }
-
-//!<
-std::string systemInfo::getHostName(void) { return hostName; }
-
-//!<
-std::string systemInfo::getPlatform(void) { return platform; }
-
-//!<
-std::string systemInfo::getDistribution(void) { return distribution; }
-
-//!<
-kernelInfo systemInfo::getKernelInfo(void) { return kernel_info; }
-
-//!<
-std::string systemInfo::getCPUModel(void) { return cpuModel; }
-
-//!<
-int systemInfo::getCPUCores(void) { return cpuCores; }
-
-//!<
-std::string systemInfo::getCPUSpeed(void) { return cpuSpeed; }
 
 //!<
 void systemInfo::resolveHostName(void) {
@@ -60,7 +35,8 @@ void systemInfo::resolveHostName(void) {
     exit(errno);
   }
 
-  hostName = str;
+  std::string temp = str;
+  hardwareInfoData->setHostname(temp);
 
   return;
 }
