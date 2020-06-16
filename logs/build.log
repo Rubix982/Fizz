@@ -1,5 +1,5 @@
----------
-[BUILD] Building for target ... 
+---------------------------
+[ BUILD ] Building for target ... 
 ---------
 Not searching for unused variables given on the command line.
 -- The C compiler identification is GNU 10.1.0
@@ -46,38 +46,38 @@ CMake Warning (dev) at /usr/lib64/cmake/Qt5Core/Qt5CoreMacros.cmake:44 (message)
   6.
 Call Stack (most recent call first):
   /usr/lib64/cmake/Qt5Core/Qt5CoreMacros.cmake:431 (_qt5_warn_deprecated)
-  CMakeLists.txt:194 (qt5_use_modules)
+  CMakeLists.txt:200 (qt5_use_modules)
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/saif/Desktop/Folders/University/OS/Project/build
-
----------
-[TEST] Running tests ... 
----------
 [1/30] Automatic MOC and UIC for target gtest
 [2/30] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/gtest_autogen/mocs_compilation.cpp.o
 [3/30] Automatic MOC and UIC for target Fizz
 [4/30] Automatic RCC for resources/qrcFiles/qml.qrc
-[5/30] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/networks.cpp.o
-[6/30] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/usage.cpp.o
-[7/30] Building CXX object CMakeFiles/Fizz.dir/Fizz_autogen/mocs_compilation.cpp.o
-[8/30] Building CXX object CMakeFiles/Fizz.dir/Fizz_autogen/HBIHOLR4PS/qrc_qml.cpp.o
+[5/30] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/usage.cpp.o
+[6/30] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/networks.cpp.o
+[7/30] Building CXX object CMakeFiles/Fizz.dir/Fizz_autogen/HBIHOLR4PS/qrc_qml.cpp.o
+[8/30] Building CXX object CMakeFiles/Fizz.dir/src/backend/mainwindow.cpp.o
+../src/backend/mainwindow.cpp: In constructor ‘MainWindow::MainWindow(QWidget*)’:
+../src/backend/mainwindow.cpp:31:20: warning: unused variable ‘view’ [-Wunused-variable]
+   31 |     QQuickWidget * view = new QQuickWidget();
+      |                    ^~~~
+../src/backend/mainwindow.cpp: In member function ‘void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint&)’:
+../src/backend/mainwindow.cpp:239:76: warning: unused parameter ‘pos’ [-Wunused-parameter]
+  239 | void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint &pos)
+      |                                                              ~~~~~~~~~~~~~~^~~
 [9/30] Building CXX object CMakeFiles/Fizz.dir/src/main.cpp.o
 [10/30] Building CXX object CMakeFiles/Fizz.dir/src/dashboard/systemInfo.cpp.o
-[11/30] Building CXX object CMakeFiles/Fizz.dir/src/backend/mainwindow.cpp.o
-../src/backend/mainwindow.cpp: In member function ‘void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint&)’:
-../src/backend/mainwindow.cpp:216:76: warning: unused parameter ‘pos’ [-Wunused-parameter]
-  216 | void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint &pos)
-      |                                                              ~~~~~~~~~~~~~~^~~
-[12/30] Linking CXX executable bin/Debug/plugins/Fizz
-[13/30] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
-[14/30] Linking CXX static library lib/libgtestd.a
-[15/30] Automatic MOC and UIC for target gtest_main
-[16/30] Automatic MOC and UIC for target gmock
-[17/30] Building CXX object googletest/googletest/CMakeFiles/gtest_main.dir/gtest_main_autogen/mocs_compilation.cpp.o
-[18/30] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/gmock_autogen/mocs_compilation.cpp.o
+[11/30] Building CXX object CMakeFiles/Fizz.dir/Fizz_autogen/mocs_compilation.cpp.o
+[12/30] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+[13/30] Linking CXX static library lib/libgtestd.a
+[14/30] Linking CXX executable bin/Debug/plugins/Fizz
+[15/30] Automatic MOC and UIC for target gmock
+[16/30] Automatic MOC and UIC for target gtest_main
+[17/30] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/gmock_autogen/mocs_compilation.cpp.o
+[18/30] Building CXX object googletest/googletest/CMakeFiles/gtest_main.dir/gtest_main_autogen/mocs_compilation.cpp.o
 [19/30] Building CXX object googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
 [20/30] Linking CXX static library lib/libgtest_maind.a
 [21/30] Automatic MOC and UIC for target ExampleTest
@@ -85,40 +85,61 @@ AutoGen warning: "SRC:/test/include/ExampleTest.hpp" is empty.
 
 [22/30] Building CXX object test/CMakeFiles/ExampleTest.dir/ExampleTest_autogen/mocs_compilation.cpp.o
 [23/30] Building CXX object test/CMakeFiles/ExampleTest.dir/src/ExampleTest.cpp.o
-[24/30] Linking CXX executable bin/ExampleTest
-[25/30] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
-[26/30] Linking CXX static library lib/libgmockd.a
-[27/30] Automatic MOC and UIC for target gmock_main
-[28/30] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/gmock_main_autogen/mocs_compilation.cpp.o
-[29/30] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
-[30/30] Linking CXX static library lib/libgmock_maind.a
+[24/30] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
+[25/30] Linking CXX static library lib/libgmockd.a
+[26/30] Automatic MOC and UIC for target gmock_main
+[27/30] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/gmock_main_autogen/mocs_compilation.cpp.o
+[28/30] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
+[29/30] Linking CXX static library lib/libgmock_maind.a
+[30/30] Linking CXX executable bin/ExampleTest
+
+real	0m25.469s
+user	0m35.967s
+sys	0m2.605s
 
 ---------
-[DOC] Generating documentation ... 
+[ TIME + BUILD ] Build time output above ... 
+---------------------------
+
+---------------------------
+[ TEST ] Running tests ... 
+---------
+ninja: no work to do.
+
+real	0m0.021s
+user	0m0.011s
+sys	0m0.010s
+
+---------
+[ TIME + TEST_BUILD ] Testing build time output above ... 
+---------------------------
+
+---------------------------
+[ DOC ] Generating documentation ... 
 ---------
 warning: Tag 'TCL_SUBST' at line 270 of file 'docs/Doxyfile' has become obsolete.
          To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
 /home/saif/Desktop/Folders/University/OS/Project/src/backend/moc_mainwindow.cpp:24: warning: Compound qt_meta_stringdata_MainWindow_t is not documented.
-/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:7: warning: documented symbol 'MainWindow::MainWindow' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:16: warning: documented symbol 'void MainWindow::setDefaultLook' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:37: warning: documented symbol 'void MainWindow::setDashboardContent' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:46: warning: documented symbol 'void MainWindow::setDashboardStyling' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:68: warning: documented symbol 'void MainWindow::setusage_MainFrameContent' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:87: warning: documented symbol 'void MainWindow::setusage_MainFrameStyling' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:92: warning: documented symbol 'void MainWindow::setsystemInfo_MainFrameContent' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:108: warning: documented symbol 'void MainWindow::setsystemInfo_MainFrameStyling' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:113: warning: documented symbol 'void MainWindow::setnetworking_MainFrameContent' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:148: warning: documented symbol 'void MainWindow::setnetworking_MainFrameStyling' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:157: warning: documented symbol 'void MainWindow::setServicesContent' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:162: warning: documented symbol 'void MainWindow::setServicesStyling' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:171: warning: documented symbol 'void MainWindow::setProcessesContent' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:176: warning: documented symbol 'void MainWindow::setProcessesStyling' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:185: warning: documented symbol 'void MainWindow::setGraphsContent' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:190: warning: documented symbol 'void MainWindow::setGraphsStyling' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:199: warning: documented symbol 'void MainWindow::setPackageContent' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:204: warning: documented symbol 'void MainWindow::setPackageStyling' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:210: warning: documented symbol 'MainWindow::~MainWindow' was not declared or defined.
-/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:216: warning: documented symbol 'void MainWindow::on_centralwidget_customContextMenuRequested' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:8: warning: documented symbol 'MainWindow::MainWindow' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:39: warning: documented symbol 'void MainWindow::setDefaultLook' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:60: warning: documented symbol 'void MainWindow::setDashboardContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:69: warning: documented symbol 'void MainWindow::setDashboardStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:91: warning: documented symbol 'void MainWindow::setusage_MainFrameContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:110: warning: documented symbol 'void MainWindow::setusage_MainFrameStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:115: warning: documented symbol 'void MainWindow::setsystemInfo_MainFrameContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:131: warning: documented symbol 'void MainWindow::setsystemInfo_MainFrameStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:136: warning: documented symbol 'void MainWindow::setnetworking_MainFrameContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:171: warning: documented symbol 'void MainWindow::setnetworking_MainFrameStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:180: warning: documented symbol 'void MainWindow::setServicesContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:185: warning: documented symbol 'void MainWindow::setServicesStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:194: warning: documented symbol 'void MainWindow::setProcessesContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:199: warning: documented symbol 'void MainWindow::setProcessesStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:208: warning: documented symbol 'void MainWindow::setGraphsContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:213: warning: documented symbol 'void MainWindow::setGraphsStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:222: warning: documented symbol 'void MainWindow::setPackageContent' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:227: warning: documented symbol 'void MainWindow::setPackageStyling' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:233: warning: documented symbol 'MainWindow::~MainWindow' was not declared or defined.
+/home/saif/Desktop/Folders/University/OS/Project/src/backend/mainwindow.cpp:239: warning: documented symbol 'void MainWindow::on_centralwidget_customContextMenuRequested' was not declared or defined.
 /home/saif/Desktop/Folders/University/OS/Project/src/backend/moc_mainwindow.cpp:58: warning: documented symbol 'void MainWindow::qt_static_metacall' was not declared or defined.
 /home/saif/Desktop/Folders/University/OS/Project/src/backend/moc_mainwindow.cpp:66: warning: documented symbol 'QT_INIT_METAOBJECT const QMetaObject MainWindow::staticMetaObject' was not declared or defined.
 /home/saif/Desktop/Folders/University/OS/Project/src/backend/moc_mainwindow.cpp:76: warning: documented symbol 'const QMetaObject * MainWindow::metaObject' was not declared or defined.
@@ -256,21 +277,29 @@ Running plantuml with JAVA...
 lookup cache used 0/65536 hits=0 misses=0
 finished...
 
+real	0m0.100s
+user	0m0.039s
+sys	0m0.012s
+
 ---------
-[CPPCHECK] Running cppcheck ... 
+[ TIME + GENERATE_DOCS ] Generating documentation time output above ... 
+---------------------------
+
+---------------------------
+[ CPPCHECK ] Running cppcheck ... 
 ---------
 Checking misc/native_cpuid.cpp ...
 1/13 files checked 0% done
 Checking src/backend/mainwindow.cpp ...
-2/13 files checked 27% done
+2/13 files checked 29% done
 Checking src/backend/moc_mainwindow.cpp ...
-3/13 files checked 44% done
+3/13 files checked 45% done
 Checking src/dashboard/networks.cpp ...
-4/13 files checked 45% done
+4/13 files checked 46% done
 Checking src/dashboard/systemInfo.cpp ...
 5/13 files checked 80% done
 Checking src/dashboard/usage.cpp ...
-6/13 files checked 81% done
+6/13 files checked 80% done
 Checking src/main.cpp ...
 7/13 files checked 90% done
 Checking tasks/dashboard/src/dashboard.cpp ...
@@ -286,52 +315,83 @@ Checking tasks/services/src/services.cpp ...
 Checking test/src/ExampleTest.cpp ...
 13/13 files checked 100% done
 
----------
-[GOOGLE TEST] Google Test output below ... 
----------
-./build.sh: line 61: ./bulid/bin/ExampleTest: No such file or directory
+real	0m0.086s
+user	0m0.027s
+sys	0m0.018s
 
 ---------
-[RUN + VALGRIND] Running executable ... 
+[ TIME + CPP_CHECK_BULD ] CPP_CHECK_BUILD time output above ... 
+---------------------------
+
+---------------------------
+[ GOOGLE TEST ] Google Test output below ... 
 ---------
-==85540== Memcheck, a memory error detector
-==85540== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==85540== Using Valgrind-3.16.0.GIT and LibVEX; rerun with -h for copyright info
-==85540== Command: ./build/bin/Debug/plugins/Fizz
-==85540== 
+Running main() from ../googletest/googletest/src/gtest_main.cc
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ExampleTests
+[ RUN      ] ExampleTests.DemonstrateGTestMacros
+[       OK ] ExampleTests.DemonstrateGTestMacros (0 ms)
+[----------] 1 test from ExampleTests (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+
+real	0m0.005s
+user	0m0.000s
+sys	0m0.002s
+
+---------
+[ TIME + GOOGLE_TEST_OUTPUT ] GOOGLE_TEST_OUTPUT time output above ... 
+---------------------------
+
+---------------------------
+[ RUN + VALGRIND ] Running executable ... 
+---------
+==121081== Memcheck, a memory error detector
+==121081== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==121081== Using Valgrind-3.16.0.GIT and LibVEX; rerun with -h for copyright info
+==121081== Command: ./build/bin/Debug/plugins/Fizz
+==121081== 
 Icon theme "ubuntu-mono-dark" not found.
 Icon theme "Mint-X" not found.
 Icon theme "elementary" not found.
-==85540== 
-==85540== HEAP SUMMARY:
-==85540==     in use at exit: 417,947 bytes in 7,532 blocks
-==85540==   total heap usage: 161,677 allocs, 154,145 frees, 140,991,148 bytes allocated
-==85540== 
-==85540== 400 bytes in 1 blocks are possibly lost in loss record 242 of 343
-==85540==    at 0x483BB65: calloc (vg_replace_malloc.c:760)
-==85540==    by 0x4013DBA: _dl_allocate_tls (in /usr/lib/ld-2.31.so)
-==85540==    by 0x6C6E0FE: pthread_create@@GLIBC_2.2.5 (in /usr/lib/libpthread-2.31.so)
-==85540==    by 0x62DB8A2: QThread::start(QThread::Priority) (in /usr/lib/libQt5Core.so.5.15.0)
-==85540==    by 0xA50B9EC: QDBusConnection::sessionBus() (in /usr/lib/libQt5DBus.so.5.15.0)
-==85540==    by 0xC1B4A95: ??? (in /usr/lib/qt/plugins/styles/breeze.so)
-==85540==    by 0xC1C64E0: ??? (in /usr/lib/qt/plugins/styles/breeze.so)
-==85540==    by 0x5672814: QStyleFactory::create(QString const&) (in /usr/lib/libQt5Widgets.so.5.15.0)
-==85540==    by 0x5605C89: QApplication::style() (in /usr/lib/libQt5Widgets.so.5.15.0)
-==85540==    by 0x5605EDD: QApplicationPrivate::initialize() (in /usr/lib/libQt5Widgets.so.5.15.0)
-==85540==    by 0x56066EE: QApplicationPrivate::init() (in /usr/lib/libQt5Widgets.so.5.15.0)
-==85540==    by 0x117C4B: main (main.cpp:44)
-==85540== 
-==85540== LEAK SUMMARY:
-==85540==    definitely lost: 0 bytes in 0 blocks
-==85540==    indirectly lost: 0 bytes in 0 blocks
-==85540==      possibly lost: 400 bytes in 1 blocks
-==85540==    still reachable: 415,831 bytes in 7,529 blocks
-==85540==         suppressed: 1,716 bytes in 2 blocks
-==85540== Reachable blocks (those to which a pointer was found) are not shown.
-==85540== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==85540== 
-==85540== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
---85540-- 
---85540-- used_suppression:      2 dtv-addr-tail /usr/lib/valgrind/default.supp:1444 suppressed: 1,716 bytes in 2 blocks
-==85540== 
-==85540== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==121081== 
+==121081== HEAP SUMMARY:
+==121081==     in use at exit: 431,679 bytes in 7,640 blocks
+==121081==   total heap usage: 163,682 allocs, 156,042 frees, 141,655,278 bytes allocated
+==121081== 
+==121081== 400 bytes in 1 blocks are possibly lost in loss record 319 of 428
+==121081==    at 0x483BB65: calloc (vg_replace_malloc.c:760)
+==121081==    by 0x4013DBA: _dl_allocate_tls (in /usr/lib/ld-2.31.so)
+==121081==    by 0x6C6E0FE: pthread_create@@GLIBC_2.2.5 (in /usr/lib/libpthread-2.31.so)
+==121081==    by 0x62DB8A2: QThread::start(QThread::Priority) (in /usr/lib/libQt5Core.so.5.15.0)
+==121081==    by 0xA50B9EC: QDBusConnection::sessionBus() (in /usr/lib/libQt5DBus.so.5.15.0)
+==121081==    by 0xC1B4A95: ??? (in /usr/lib/qt/plugins/styles/breeze.so)
+==121081==    by 0xC1C64E0: ??? (in /usr/lib/qt/plugins/styles/breeze.so)
+==121081==    by 0x5672814: QStyleFactory::create(QString const&) (in /usr/lib/libQt5Widgets.so.5.15.0)
+==121081==    by 0x5605C89: QApplication::style() (in /usr/lib/libQt5Widgets.so.5.15.0)
+==121081==    by 0x5605EDD: QApplicationPrivate::initialize() (in /usr/lib/libQt5Widgets.so.5.15.0)
+==121081==    by 0x56066EE: QApplicationPrivate::init() (in /usr/lib/libQt5Widgets.so.5.15.0)
+==121081==    by 0x1144DB: main (main.cpp:44)
+==121081== 
+==121081== 13,596 (48 direct, 13,548 indirect) bytes in 1 blocks are definitely lost in loss record 424 of 428
+==121081==    at 0x4839DEF: operator new(unsigned long) (vg_replace_malloc.c:342)
+==121081==    by 0x115D09: MainWindow::MainWindow(QWidget*) (mainwindow.cpp:31)
+==121081==    by 0x1144E5: main (main.cpp:45)
+==121081== 
+==121081== LEAK SUMMARY:
+==121081==    definitely lost: 48 bytes in 1 blocks
+==121081==    indirectly lost: 13,548 bytes in 105 blocks
+==121081==      possibly lost: 400 bytes in 1 blocks
+==121081==    still reachable: 415,967 bytes in 7,531 blocks
+==121081==         suppressed: 1,716 bytes in 2 blocks
+==121081== Reachable blocks (those to which a pointer was found) are not shown.
+==121081== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==121081== 
+==121081== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+--121081-- 
+--121081-- used_suppression:      2 dtv-addr-tail /usr/lib/valgrind/default.supp:1444 suppressed: 1,716 bytes in 2 blocks
+==121081== 
+==121081== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)

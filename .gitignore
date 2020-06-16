@@ -1,10 +1,10 @@
 # Ignore the build directory
-cmake-build-debug
-build
+.idea/
+.vscode/
+build/
 tasks/dashboard/build
-
-.idea
-.vscode
+cmake/
+logs/vgcore*
 
 # Ignore some logo files
 img/Logo/facebook_cover_photo_2.png

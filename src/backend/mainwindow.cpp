@@ -3,14 +3,37 @@
 
 #include <iostream>
 #include <QQmlContext>
+#include <QQuickView>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    // ui->quickWidget->rootContext()->setContextProperty("MainWindow", this);
-    // ui->quickWidget->setSource(QUrl(QStringLiteral("./resources/qrcFiles/main.qml")));
+
+    // ui->CPU->setSource(QUrl(QStringLiteral("./resources/qrcFiles/main.qml")));
+
+    // m_engine->addImportPath("./resources/qrcFiles/");
+
+    // m_engine->load(QUrl(QStringLiteral("./resources/qrcFiles/main.qml")));
+
+    // qDebug() << "[MAIN_WINDOW.CPP] QQmlApplicationEngine created ... ";
+
+    // QWindow *qmlWindow = qobject_cast<QWindow*>(m_engine->rootContext());
+
+    // QWidget *container = QWidget::createWindowContainer(qmlWindow);
+
+    // container->setMinimumSize(200, 200);
+    // container->setMaximumSize(1200, 900);
+
+    // ui->horizontalLayout->addWidget(container);
+
+    QQuickWidget * view = new QQuickWidget();
+    // view->setSource(QUrl::fromLocalFile("./resources/qrcFiles/main.qml"));
+
+    // // view->show();
+
+    // ui->horizontalLayout->addWidget(view);
 }
 
 void MainWindow::setDefaultLook(void)

@@ -1,0 +1,7 @@
+<RCC>
+    <qresource>
+        <file>images/simpsons.jpg</file>
+        <file>text/text.txt</file>
+        <file>main.qml</file>
+    </qresource>
+</RCC>

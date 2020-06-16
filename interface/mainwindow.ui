@@ -166,21 +166,21 @@ p, li { white-space: pre-wrap; }
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QQuickWidget" name="quickWidget">
+        <widget class="QQuickWidget" name="CPU">
          <property name="resizeMode">
           <enum>QQuickWidget::SizeRootObjectToView</enum>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QQuickWidget" name="quickWidget_3">
+        <widget class="QQuickWidget" name="Memory">
          <property name="resizeMode">
           <enum>QQuickWidget::SizeRootObjectToView</enum>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QQuickWidget" name="quickWidget_2">
+        <widget class="QQuickWidget" name="Disk">
          <property name="resizeMode">
           <enum>QQuickWidget::SizeRootObjectToView</enum>
          </property>

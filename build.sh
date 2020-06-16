@@ -1,31 +1,42 @@
 function cppcheck_build {
     echo "" &>> ./logs/build.log
-    echo "---------" &>> ./logs/build.log
-    echo "[CPPCHECK] Running cppcheck ... " &>> ./logs/build.log
+    echo "---------------------------" &>> ./logs/build.log
+    echo "[ CPPCHECK ] Running cppcheck ... " &>> ./logs/build.log
     echo "---------" &>> ./logs/build.log
     cppcheck -i build -i googletest -i cmake . &>> ./logs/build.log
 }
 
 function build() {
-    echo "---------" &>> ./logs/build.log
-    echo "[BUILD] Building for target ... " &>> ./logs/build.log
+    echo "---------------------------" &>> ./logs/build.log
+    echo "[ BUILD ] Building for target ... " &>> ./logs/build.log
     echo "---------" &>> ./logs/build.log
 
     uic interface/mainwindow.ui -o include/ui_mainwindow.h
 
-    cmake --target all --no-warn-unused-cli -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE \
-    -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc \
-    -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++ \
-    -H/home/saif/Desktop/Folders/University/OS/Project \
-    -B/home/saif/Desktop/Folders/University/OS/Project/build -G Ninja &>> ./logs/build.log
+    cmake --target all --no-warn-unused-cli \
+        -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE \
+        -DCMAKE_BUILD_TYPE:STRING="Debug" \
+        -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc \
+        -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++ \
+        -DCMAKE_CXX_FLAGS:STRING="-march=native -m64 -Ofast -flto" \
+        -DCMAKE_EXE_LINKER_FLAGS:STRING="-Wl,--allow-multiple-definition" \
+        -H/home/saif/Desktop/Folders/University/OS/Project \
+        -B/home/saif/Desktop/Folders/University/OS/Project/build -G Ninja &>> \
+        ./logs/build.log
+
+    cd build
+
+    ninja &>> ../logs/build.log
+
+    cd ..
 }
 
 function run_build() {
 
     # run the executable
     echo "" &>> ./logs/build.log
-    echo "---------" &>> ./logs/build.log
-    echo "[RUN + VALGRIND] Running executable ... " &>> ./logs/build.log
+    echo "---------------------------" &>> ./logs/build.log
+    echo "[ RUN + VALGRIND ] Running executable ... " &>> ./logs/build.log
     echo "---------" &>> ./logs/build.log
     valgrind --tool=memcheck --leak-check=yes -s ./build/bin/Debug/plugins/Fizz &>> ./logs/build.log
 }
@@ -33,8 +44,8 @@ function run_build() {
 function test_build() {
     # run the tests
     echo "" &>> ./logs/build.log
-    echo "---------" &>> ./logs/build.log
-    echo "[TEST] Running tests ... " &>> ./logs/build.log
+    echo "---------------------------" &>> ./logs/build.log
+    echo "[ TEST ] Running tests ... " &>> ./logs/build.log
     echo "---------" &>> ./logs/build.log
     cmake --build /home/saif/Desktop/Folders/University/OS/Project/build --config Debug --target all -- -j 6 &>> ./logs/build.log
 }
@@ -47,18 +58,18 @@ function clear_log() {
 
 function generate_docs() {
     echo "" &>> ./logs/build.log
-    echo "---------" &>> ./logs/build.log
-    echo "[DOC] Generating documentation ... " &>> ./logs/build.log
+    echo "---------------------------" &>> ./logs/build.log
+    echo "[ DOC ] Generating documentation ... " &>> ./logs/build.log
     echo "---------" &>> ./logs/build.log
     doxygen docs/Doxyfile &>> ./logs/build.log
 }
 
 function google_test_output() {
     echo "" &>> ./logs/build.log
+    echo "---------------------------" &>> ./logs/build.log
+    echo "[ GOOGLE TEST ] Google Test output below ... " &>> ./logs/build.log
     echo "---------" &>> ./logs/build.log
-    echo "[GOOGLE TEST] Google Test output below ... " &>> ./logs/build.log
-    echo "---------" &>> ./logs/build.log
-    ./bulid/bin/ExampleTest &>> ./logs/build.log
+    ./build/bin/ExampleTest &>> ./logs/build.log
 }
 
 # MAIN functionality starts here
@@ -78,12 +89,48 @@ then
     # printf "In all\n"
 
     clear_log # Clear the file
-    build # build the project
-    test_build # Run the tests
-    generate_docs # generate the relevant documentation
-    cppcheck_build # run cpp check over the files
-    google_test_output # output the result of google tests
-    run_build # Run the executable with valgrind
+
+    # build the project
+    (time build) &>> ./logs/build.log
+    echo "" &>> ./logs/build.log
+    echo "---------" &>> ./logs/build.log
+    echo "[ TIME + BUILD ] Build time output above ... " &>> ./logs/build.log
+    echo "---------------------------" &>> ./logs/build.log
+
+    # Run the tests
+    (time test_build) &>> ./logs/build.log
+    echo "" &>> ./logs/build.log
+    echo "---------" &>> ./logs/build.log
+    echo "[ TIME + TEST_BUILD ] Testing build time output above ... " &>> ./logs/build.log
+    echo "---------------------------" &>> ./logs/build.log
+
+    # generate the relevant documentation
+    (time generate_docs) &>> ./logs/build.log
+
+    echo "" &>> ./logs/build.log
+    echo "---------" &>> ./logs/build.log
+    echo "[ TIME + GENERATE_DOCS ] Generating documentation time output above ... " &>> ./logs/build.log
+    echo "---------------------------" &>> ./logs/build.log
+
+    # run cpp check over the files
+    (time cppcheck_build) &>> ./logs/build.log
+    echo "" &>> ./logs/build.log
+    echo "---------" &>> ./logs/build.log
+    echo "[ TIME + CPP_CHECK_BULD ] CPP_CHECK_BUILD time output above ... " &>> ./logs/build.log
+    echo "---------------------------" &>> ./logs/build.log
+
+    # output the result of google tests
+    (time google_test_output) &>> ./logs/build.log
+    echo "" &>> ./logs/build.log
+    echo "---------" &>> ./logs/build.log
+    echo "[ TIME + GOOGLE_TEST_OUTPUT ] GOOGLE_TEST_OUTPUT time output above ... " &>> ./logs/build.log
+    echo "---------------------------" &>> ./logs/build.log
+
+    # Run the executable with valgrind
+    run_build
+
+    # clean the main build
+    mv ./vgcore* ./logs
 
 elif [ "$1" = "clean" ]
 then

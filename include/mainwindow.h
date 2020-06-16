@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include <QMainWindow>
+#include <QQmlApplicationEngine>
 #include <QFile>
 
 QT_BEGIN_NAMESPACE

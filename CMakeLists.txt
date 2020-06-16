@@ -22,6 +22,11 @@ if (POLICY CMP0028)
     cmake_policy(SET CMP0028 NEW)
 endif()
 
+# Manages version variables
+if (POLICY CMP0048)
+    cmake_policy(SET CMP0048 NEW)
+endif()
+
 # @param Should be the project name
 set(PROJECT_NAME Fizz)
 

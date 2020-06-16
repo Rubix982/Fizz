@@ -6,7 +6,8 @@
 	],
 	"settings": {
 		"files.associations": {
-			"qwidget": "cpp"
+			"qwidget": "cpp",
+			"qqmlcontext": "cpp"
 		}
 	}
 }

@@ -44,6 +44,14 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     MainWindow MainWindow;
 
+    // QQmlEngine engine;
+
+    // // Using QQuickView
+    // QQuickView view;
+    // view.setSource(QUrl::fromLocalFile("./resources/qrcFiles/main.qml"));
+    // view.show();
+    // QObject *object = view.rootObject();
+
     MainWindow.setDefaultLook();
 
     MainWindow.show();
@@ -53,4 +61,5 @@ int main(int argc, char *argv[])
 /*
     * References
     * Integrating QML with QT Widgets, https://www.youtube.com/watch?v=rK6BBW-xdUw
+    * Same as above, https://doc.qt.io/qt-5/qtqml-cppintegration-interactqmlfromcpp.html
 */
