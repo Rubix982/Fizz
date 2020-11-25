@@ -4,6 +4,8 @@
 
 # Fizz
 
+Project is currently not being worked on. I might come back here later, but nothing at the moment. :/
+
 A UI and dashboard for system processes, memory, CPU usage, and common Operating System statistics. Inspired by [stacer](https://github.com/oguzhaninan/Stacer), and [netdata](https://github.com/netdata/netdata).
 
 Designed using
